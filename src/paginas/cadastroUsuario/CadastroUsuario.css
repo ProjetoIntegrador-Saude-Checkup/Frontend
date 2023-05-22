@@ -1,0 +1,19 @@
+.imagem2{
+  background-image: url(src/assets/images/backgroundimg.jpeg);
+  background-repeat: no-repeat;
+  width: 100vh;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  border-color: black;
+  border-size:10px;
+}
+
+.titulo{
+  font-weight: bold !important;
+  color: #141F6B;
+}
+
+.btnCancelar{
+  margin-right: 20px !important;
+}
