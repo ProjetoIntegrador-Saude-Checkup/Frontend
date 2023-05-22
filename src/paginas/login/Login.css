@@ -3,7 +3,7 @@
  }
  
  .imagem{
-     background-image: url(src/assets/images/backgroundim.jpeg);
+     background-image: url(src/assets/images/backgroundimg.jpeg);
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
