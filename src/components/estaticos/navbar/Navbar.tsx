@@ -1,6 +1,8 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import {Box} from '@mui/material';
+import { Box } from '@mui/material';
+import { Link } from 'react-router-dom';
+import './Navbar.css'
 function Navbar() {
     return (
         <>
@@ -15,7 +17,7 @@ function Navbar() {
                     <Box display="flex" justifyContent="start">
                         <Box mx={1} style={{ cursor: "pointer" }}>
                             <Typography variant="h6" color="inherit">
-                               HOME
+                                HOME
                             </Typography>
                         </Box>
                         <Box mx={1} style={{ cursor: "pointer" }}>
@@ -33,11 +35,13 @@ function Navbar() {
                                 CADASTRAR TEMA
                             </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }} marginLeft={80}>
-                            <Typography variant="h6" color="inherit">
-                                LOGOUT
-                            </Typography>
-                        </Box>
+                        <Link to='/login' className='text-decorator-none'>
+                            <Box mx={1} style={{ cursor: "pointer" }} marginLeft={80}>
+                                <Typography variant="h6" color="inherit">
+                                    LOGOUT
+                                </Typography>
+                            </Box>
+                        </Link>
                     </Box>
 
                 </Toolbar>
