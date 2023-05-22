@@ -3,7 +3,7 @@
  }
  
  .imagem{
-     background-image: url(https://media.discordapp.net/attachments/1095884370511933484/1110260676871598160/IMG-20230522-WA0026.jpg);
+     background-image: url(src/assets/images/backgroundim.jpeg);
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
