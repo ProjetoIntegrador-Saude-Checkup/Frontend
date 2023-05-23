@@ -1,5 +1,31 @@
-* {
-  padding: 0;
+body{
+  display: flex;
   margin: 0;
-  box-sizing: border-box;
 }
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../src/assets/font/Montserrat-Thin.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../src/assets/font/Montserrat-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../src/assets/font/Montserrat-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../src/assets/font/Montserrat-Bold.ttf);
+  font-weight: 700;
+}
+
+
+
