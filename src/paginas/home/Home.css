@@ -1,0 +1,87 @@
+@import url(../../App.css);
+
+.background {
+    background-image: url(../../assets/images/background2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.home {
+    padding: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.textoHome {
+    padding-bottom: 90px;
+}
+
+.textoHome h5 {
+    color: #96BB7C;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.textoHome h1 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    color: #252B42;
+}
+
+.textoHome p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 19px;
+    color: #737373;
+}
+
+.imagemHome {
+    display: flex;
+    justify-content: center;
+    margin-top: -190px;
+}
+
+.home button {
+    border: 1px solid #96BB7C;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botaoCadastro {
+    color: #fff;
+    background: #96BB7C;
+}
+
+.botaoCadastro:hover {
+    transition: 0.4s ease-in-out;
+    background-color: #637a53;
+    color: #fefefe;
+    border: 1px solid #517c35;
+}
+
+.botaoSobre {
+    color: #96BB7C;
+    margin-left: 15px;
+    background: transparent;
+}
+
+.botaoSobre:hover {
+    transition: 0.4s ease-in-out;
+    background-color: #96BB7C;
+    color: #fefefe;
+    border: 1px solid #bbed9a;
+}
