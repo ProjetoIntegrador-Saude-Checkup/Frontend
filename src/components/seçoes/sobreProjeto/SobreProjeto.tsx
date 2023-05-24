@@ -6,7 +6,7 @@ import './SobreProjeto.css'
 function SobreProjeto() {
     return (
         <>
-            <Grid className='containerProjeto' container direction='row'>
+            <Grid className='containerProjeto' container direction='row' item xs={12} sm={12}>
                 <Grid className='serviços' item xs={12} sm={7} >
                     <Box>
                         <div className='linha'></div>
@@ -14,8 +14,7 @@ function SobreProjeto() {
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam beatae sequi laboriosam pariatur iusto ipsa impedit accusantium quo voluptatibus aliquam consectetur saepe voluptas ea adipisci libero, iste, laborum tenetur magni?</p>
                     </Box>
                 </Grid>
-                <Grid className='containerCards' container direction='row'>
-                    <Grid className='cards' item xs={12} sm={6} >
+                    <Grid className='cards' item xs={12} sm={2} >
                         <Box>
                             <img className='imgCards' src="src\assets\images\imgCard.png" alt="" />
                             <h5>Divulgações</h5>
@@ -23,7 +22,7 @@ function SobreProjeto() {
                             <p>Campanhas de saúde e vacinação em um só lugar</p>
                         </Box>
                     </Grid>
-                    <Grid className='cards' item xs={12} sm={6} >
+                    <Grid className='cards' id="card2" item xs={12} sm={2} >
                         <Box>
                             <img className='imgCards' src="src\assets\images\imgCard2.png" alt="" />
                             <h5>Dicas</h5>
@@ -31,7 +30,6 @@ function SobreProjeto() {
                             <p>Compartilhe dicas que colaboram para o bem-estar</p>
                         </Box>
                     </Grid>
-                </Grid>
             </Grid >
         </>
     );
