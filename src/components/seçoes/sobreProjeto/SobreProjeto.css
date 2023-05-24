@@ -1,0 +1,85 @@
+.containerProjeto {
+    width: 1440px;
+    height: 671px;
+    background: #FFFFFF;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    align-items: center;
+    padding: 50px;
+}
+
+.linha {
+    width: 94px;
+    height: 7px;
+    background: #2A7CC7;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.linha2 {
+    width: 50px;
+    height: 2px;
+    background: #2A7CC7;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.serviços {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    padding-right: 50px;
+    gap: 35px;
+    width: 507px;
+    height: 296px;
+    margin-right: 60px;
+}
+
+.serviços p {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #737373;
+
+}
+
+.serviços h2 {
+    width: 700px;
+    height: 100px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 0.2px;
+    color: #252B42;
+}
+
+.containerCards{
+    margin-left: 30px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 35px 40px;
+    gap: 20px;
+    width: 249px;
+    height: 288px;
+    background: #FFFFFF;
+    box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.cards img {
+   width: 30%;
+}
