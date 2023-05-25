@@ -4,6 +4,7 @@ import Navbar from './components/estaticos/navbar/Navbar'
 import Home from './paginas/home/Home'
 import Login from './paginas/login/Login'
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario'
+import './App.css'
 
 function App() {
   return (
