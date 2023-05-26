@@ -15,7 +15,7 @@ function Navbar() {
     const dispatch = useDispatch();
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
-      )
+    )
 
     let navigate = useNavigate();
 
@@ -39,10 +39,27 @@ function Navbar() {
             <Toolbar className='toolbar'>
                 <Box className='toolbar-menu'>
                 <img className='toolbar-logo' src={imagem} alt="Imagem" />
-                    <a className='href-subli ' href='/home'><Typography>Home</Typography></a>
-                    <a className='href-subli' href='/sobre'><Typography>Sobre</Typography></a>
-                    <a className='href-subli' href='/postagens'><Typography>Postagens</Typography></a>
-                    <a className='href-subli' href='/contato'><Typography>Contato</Typography></a>
+                <Link to='/home'  >
+                <Typography className='href-subli '> Home</Typography>
+                </Link>
+                <Link to='/sobre'  >
+                <Typography className='href-subli '> Sobre</Typography>
+                </Link>
+                <Link to='/postagens'  >
+                <Typography className='href-subli '> Postagens</Typography>
+                </Link>
+                <Link to='/formularioPostagem'  >
+                <Typography className='href-subli '>Cadastrar Postagem</Typography>
+                </Link>
+                <Link to='/temas'  >
+                <Typography className='href-subli '>Temas</Typography>
+                </Link>
+                <Link to='/formularioTema'  >
+                <Typography className='href-subli '> cadastrar tema</Typography>
+                </Link>
+                <Link to='/Contato'  >
+                <Typography className='href-subli '>Contato</Typography>
+                </Link>
                 </Box>
                 <Box className='toolbar-login' onClick={goLogout}>
                     <Button variant="contained" href='/login'>logout</Button>

@@ -13,8 +13,8 @@ export const reducer = (state: UserState = initialState, action: any) => {
                 tokens: action.payload
             }
         }   
-         default: 
-             return state
+        default: 
+            return state
     }
 }
 /*Muda o estado das informações(se tiver alguma ação ela intercepta)*/

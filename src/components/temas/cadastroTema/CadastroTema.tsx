@@ -7,15 +7,16 @@ import { buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
+import { Box } from '@mui/material';
 
 
 function CadastroTema() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
-   
+
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
-      )
+    )
     const [tema, setTemas] = useState<Tema>({
         id: 0,
             assunto: '',
@@ -48,9 +49,9 @@ function CadastroTema() {
     async function findById(id: string) {
         buscaId(`/temas/${id}`, setTemas, {
             headers: {
-              'Authorization': token
+            'Authorization': token
             }
-          })
+        })
         }
 
         function updatedTema(e: ChangeEvent<HTMLInputElement>) {
@@ -98,17 +99,18 @@ function CadastroTema() {
         function back() {
             navigate('/temas')
         }
-  
+
     return (
         <Container maxWidth="sm" className="topo">
             <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                <TextField value={tema.assunto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
+                <TextField value={tema.assunto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="assunto" label="assunto" variant="outlined" name="assunto" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" color="primary">
                     Finalizar
                 </Button>
             </form>
         </Container>
+        
     )
 }
 

@@ -12,7 +12,7 @@ import { toast } from 'react-toastify';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
- 
+
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   )
@@ -56,7 +56,7 @@ function ListaPostagem() {
       {
         posts.map(post => (
 
-          <Box m={2} >
+          <Box style={{paddingTop:"70px"}} mx={5} >
             <Card variant="outlined">
               <CardContent>
                 <Typography color="textSecondary" gutterBottom>

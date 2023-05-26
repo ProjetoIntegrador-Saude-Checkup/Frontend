@@ -2,6 +2,7 @@
     height: 10% !important;
     background-color: #62929E!important;
     position: fixed !important;
+    display: block !important;
 }
 
 .toolbar {
@@ -11,19 +12,21 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .toolbar-menu{
-    width: 40vw;
+    width: 80vw;
     height: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
+
 }
 
 .toolbar-logo{
-    width: 10%;
+    width: 5%;
 }
 
 .toolbar-login{

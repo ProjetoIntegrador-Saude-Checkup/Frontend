@@ -17,7 +17,7 @@ function CadastroPostagem() {
 
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
-      )
+    )
 
     useEffect(() => {
         if (token == "") {
