@@ -15,7 +15,7 @@ function Footer() {
     return (
 
         <>
- <Grid className='footer' style={{ backgroundColor: "#ffffff", width: "100%", margin: 0 }} spacing={3} container direction="row" justifyContent="center">
+<Grid className='footer' style={{ backgroundColor: "#ffffff", width: "100%", margin: 0 }} spacing={3} container direction="row" justifyContent="center">
 
 {/* Sobre o projeto */}
 <Grid item xs={5}>
@@ -74,7 +74,6 @@ function Footer() {
     </Box>
 </Grid>
 </Grid>
-           
 
         </>
         )

@@ -2,13 +2,14 @@ import React from 'react';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
-import imagem from '../../../assets/images/Logoteste.png';
+import imagem from '../../../assets/images/Logocoracao.png';
 import './Navbar.css'
 
 
 function Navbar() {
     return (
         <>
+            <AppBar className='appbar' position="static">
             <Toolbar className='toolbar'>
                 <Box className='toolbar-menu'>
                 <img className='toolbar-logo' src={imagem} alt="Imagem" />
@@ -21,6 +22,7 @@ function Navbar() {
                     <Button variant="contained">login</Button>
                 </Box>
             </Toolbar>
+            </AppBar>
         </>
     )
 }
