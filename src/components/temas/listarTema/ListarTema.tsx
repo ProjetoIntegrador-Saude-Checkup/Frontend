@@ -4,7 +4,6 @@ import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/
 import {Box} from '@mui/material';
 import Tema from '../../../models/Tema';
 import './ListarTema.css';
-import useLocalStorage from 'react-use-localstorage';
 import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
@@ -13,7 +12,7 @@ import { toast } from 'react-toastify';
 
 function ListaTemas() {
   const [temas, setTemas] = useState<Tema[]>([])
-  //const [token, setToken] = useLocalStorage('token');
+  
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   )
