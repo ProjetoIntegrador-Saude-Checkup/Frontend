@@ -1,17 +1,88 @@
 .swiper {
-    width: 100vw;
-    height: 60vh;
-  }
-  
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* object-position: 80% 100%; */
-  }
-  
-  .swiper {
-    margin-left: auto;
-    margin-right: auto;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  width: 1200px;
+  height: 378px;
+  background: #FFFFFF;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  padding: 19px;
+}
+
+.swiper-pagination-bullets{
+  display: none;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* object-position: 80% 100%; */
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardPost{
+  box-shadow: 4px 8px 13px rgba(0, 0, 0, 0.07);
+}
+
+.textoSlide {
+  display: flex;
+  padding: 20px;
+  justify-content: flex-start;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+}
+
+.textoSlide h5 {
+  width: 126px;
+  height: 24px;
+  font-size: 14px;
+  color: #96BB7C;
+  margin: 0;
+}
+
+.textoSlide h4 {
+  width: 160px;
+  height: 24px;
+  font-size: 16px;
+  color: #252B42;
+  margin: 0;
+}
+
+.textoSlide p {
+  width: 242px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  color: #737373;
+  margin: 0;
+}
+
+.slide img {
+  width: 280px;
+  height: 378px;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.slide button {
+  border: 1px solid #96BB7C;
+  background-color: #FFFFFF;
+  color: #96BB7C;
+  align-items: center;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
