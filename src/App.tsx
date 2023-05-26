@@ -3,13 +3,10 @@ import Footer from './components/estaticos/footer/Footer'
 import Navbar from './components/estaticos/navbar/Navbar'
 import Home from './paginas/home/Home'
 import Login from './paginas/login/Login'
-import SobreProjeto from './components/seçoes/sobreProjeto/SobreProjeto'
-import HomePosts from './components/seçoes/homePosts/HomePosts'
-import Carrossel from './components/carrossel/Carrossel'
-import Devs from './components/seçoes/desenvolvedores/Devs'
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario'
+import './App.css'
 
 function App() {
-
   return (
     <>
       <div>
@@ -19,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/cadastrousuario" element={<CadastroUsuario />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -26,4 +24,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
