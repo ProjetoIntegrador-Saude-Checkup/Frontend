@@ -1,6 +1,9 @@
 import { Grid, Box } from '@material-ui/core';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import SobreProjeto from '../../components/seçoes/sobreProjeto/SobreProjeto';
+import HomePosts from '../../components/seçoes/homePosts/HomePosts';
+import Devs from '../../components/seçoes/desenvolvedores/Devs';
 
 function Home() {
     return (
@@ -32,6 +35,9 @@ function Home() {
                     </Grid>
                 </Grid>
             </Grid>
+            <SobreProjeto />
+            <HomePosts />
+            <Devs />
         </>
     );
 }

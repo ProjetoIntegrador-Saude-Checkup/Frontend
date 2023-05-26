@@ -13,7 +13,7 @@
   padding: 19px;
 }
 
-.swiper-pagination-bullets{
+.swiper-pagination-bullets {
   display: none;
 }
 
@@ -30,7 +30,7 @@
   margin-right: auto;
 }
 
-.cardPost{
+.cardPost {
   box-shadow: 4px 8px 13px rgba(0, 0, 0, 0.07);
 }
 
@@ -85,4 +85,11 @@
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+}
+
+.slide button:hover {
+  border: 1px solid #96BB7C;
+  background-color: #96BB7C;
+  color: #FFFFFF;
+  transition: 0.4s ease-in-out;
 }
