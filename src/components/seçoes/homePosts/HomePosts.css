@@ -1,0 +1,45 @@
+.containerHomePosts {
+    width: 1440px;
+    height: 671px;
+    background: #FFFFFF;
+    padding: 50px;
+   
+    margin-bottom: 170px;
+}
+
+.textoHomePosts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    padding: 0px;
+    gap: 10px;
+    width: 691px;
+    height: 134px;
+    margin: 0;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-left: 60px;
+    margin-top: 50px;
+    margin-bottom: 160px;
+}
+
+.textoHomePosts h6 {
+    font-size: 14px;
+    color: #96BB7C;
+}
+
+.textoHomePosts h2 {
+    font-size: 40px;
+    color: #252B42;
+}
+
+.textoHomePosts p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #737373;
+}

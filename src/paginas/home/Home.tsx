@@ -1,5 +1,4 @@
 import { Grid, Box } from '@material-ui/core';
-import Carrossel from '../../components/carrossel/Carrossel';
 import './Home.css';
 import { Link } from 'react-router-dom';
 
@@ -7,6 +6,9 @@ function Home() {
     return (
         <>
             <Grid className='background' container direction='row'>
+                <div className='retanguloMenor'></div>
+                <div className='retanguloMaior'></div>
+                <div className='formatos'><img src="src\assets\images\formatos.png" alt="" /></div>
                 <Grid className='home' item xs={12} sm={12} container>
                     <Grid className='textoHome' item xs={12} sm={6} >
                         <Box>

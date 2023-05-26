@@ -1,13 +1,38 @@
 @import url(../../App.css);
 
 .background {
-    background-image: url(../../assets/images/background2.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100%;
+    width: 1440px;
+    height: 841px;
+    background: #FFFFFF;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.retanguloMenor {
     position: absolute;
-    overflow: hidden;
+    width: 111.61px;
+    height: 176.96px;
+    left: 0px;
+    top: 0px;
+    background: #EFF8ED;
+}
+
+.retanguloMaior {
+    position: absolute;
+    width: 604.15px;
+    height: 700px;
+    right: 0px;
+    top: 0px;
+    background: #EFF8ED;
+    z-index: 0;
+}
+
+.formatos {
+    position: absolute;
+    left: 650px;
+    top: 150px;
 }
 
 .home {
@@ -21,36 +46,35 @@
 
 .textoHome {
     padding-bottom: 90px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    z-index: 1;
 }
 
 .textoHome h5 {
     color: #96BB7C;
-    font-family: 'Montserrat';
-    font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: medium;
 }
 
 .textoHome h1 {
-    font-family: 'Montserrat';
-    font-style: normal;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 35px;
     color: #252B42;
 }
 
 .textoHome p {
-    font-family: 'Montserrat';
-    font-style: normal;
     font-weight: 400;
-    font-size: 19px;
+    font-size: 18.5px;
     color: #737373;
 }
 
 .imagemHome {
+    position: absolute;
     display: flex;
     justify-content: center;
-    margin-top: -190px;
+    top: 90px;
+    right: 50px;
 }
 
 .home button {
@@ -81,7 +105,7 @@
 
 .botaoSobre:hover {
     transition: 0.4s ease-in-out;
-    background-color: #96BB7C;
+    background-color: #c5ddb6;
     color: #fefefe;
     border: 1px solid #bbed9a;
 }
