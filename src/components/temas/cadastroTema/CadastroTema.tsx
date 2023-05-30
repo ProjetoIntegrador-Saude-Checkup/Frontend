@@ -7,8 +7,6 @@ import { buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
-import { Box } from '@mui/material';
-
 
 function CadastroTema() {
     let navigate = useNavigate();
@@ -18,7 +16,7 @@ function CadastroTema() {
         (state) => state.tokens
     )
     const [tema, setTemas] = useState<Tema>({
-        id: 0,
+            id: 0,
             assunto: '',
             status: true
     })
