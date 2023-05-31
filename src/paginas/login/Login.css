@@ -1,16 +1,30 @@
 .textos1{
     font-weight: bold !important;
+    color: red;
+    text-decoration: none;
  }
  
  .imagem{
-     background-image: url(src/assets/images/backgroundimg.jpeg);
+     background-image: url(src/assets/images/logoback.png);
      background-repeat: no-repeat;
      width: 100vh;
      min-height: 100vh;
      background-size: cover;
-     background-position: center;
+    /* margin-left:101px */
  }
  
  .text-decorator-none{
      text-decoration: none;
  }
+
+ .loginForm{
+    height:27rem;
+    background-color: rgba(0, 51, 255, 0.05);
+     /* background-color: rgba(255, 255, 255, 0.3); */
+    border-color:#62929E !important;
+ }
+
+ .bg-08-blue{
+    align-items: center;
+    background-color: #CCFAFA !important;
+    }
