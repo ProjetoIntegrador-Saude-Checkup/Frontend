@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service'
-import {Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import {Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import {Box} from '@mui/material';
 import './ListarPostagem.css';
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
+
+import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
+import DeleteIcon from '@mui/icons-material/Delete';
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -56,42 +60,44 @@ function ListaPostagem() {
       {
         posts.map(post => (
 
-          <Box style={{paddingTop:"70px"}} mx={5} >
-            <Card variant="outlined">
-              <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  Postagens
-                </Typography>
-                <Typography variant="h5" component="h2">
-                  {post.titulo}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {post.texto}
-                </Typography>
-                <Typography variant="body2" component="p">
-                  {post.tema?.assunto}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5}>
+          <Box mx={5} >
+            <Card variant="outlined" className="caixa" >
+                <CardContent >
+                  <Typography variant="h4" component="h4">
+                    {post.tema?.assunto}
+                  </Typography>
+                  <Typography variant="h5" component="h4" gutterBottom>
+                    {post.titulo}
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    {post.texto}
+                  </Typography>
 
-                  <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
-                    <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        Atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
-                        Deletar
-                      </Button>
-                    </Box>
-                  </Link>
+                </CardContent>
+                <CardActions>
+                  <Box display="flex" justifyContent="center" mb={1.5}>
+
+                    <Link to={`/formularioPostagem/${post.id}`} className="botaoatucan">
+                      <Box mx={1} >
+                          <ModeEditOutlineOutlinedIcon/>
+                      </Box>
+                    </Link>
+                    <Link to={`/deletarPostagem/${post.id}`} className="botaoatucan">
+                      <Box mx={1}>
+                          <DeleteIcon />
+                      </Box>
+                    </Link>
+                  </Box>
+               
+              </CardActions> 
+              
+             </Card>              
+            
+              <Link to={`/formularioPostagem`}  >
+                <Box>
+                  <AddCircleOutlinedIcon className="botaoadicionar"/>
                 </Box>
-              </CardActions>
-            </Card>
+              </Link>
           </Box>
         ))
       }
