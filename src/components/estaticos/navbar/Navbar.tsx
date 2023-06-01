@@ -9,7 +9,6 @@ import { UserState } from '../../../store/token/Reducer';
 import { addToken } from '../../../store/token/Action';
 import { toast } from 'react-toastify';
 
-
 function Navbar() {
     //const [token, setToken] = useLocalStorage('token');
     const dispatch = useDispatch();
@@ -33,41 +32,57 @@ function Navbar() {
         });
         navigate('/login')
     }
-    return (
-        <>
-            <AppBar className='appbar' position="static">
-            <Toolbar className='toolbar'>
-                <Box className='toolbar-menu'>
-                <img className='toolbar-logo' src={imagem} alt="Imagem" />
-                <Link to='/home'  >
-                <Typography className='href-subli '> Home</Typography>
-                </Link>
-                <Link to='/sobre'  >
-                <Typography className='href-subli '> Sobre</Typography>
-                </Link>
-                <Link to='/postagens'  >
-                <Typography className='href-subli '> Postagens</Typography>
-                </Link>
-                <Link to='/formularioPostagem'  >
-                <Typography className='href-subli '>Cadastrar Postagem</Typography>
-                </Link>
-                <Link to='/temas'  >
-                <Typography className='href-subli '>Temas</Typography>
-                </Link>
-                <Link to='/formularioTema'  >
-                <Typography className='href-subli '> cadastrar tema</Typography>
-                </Link>
-                <Link to='/Contato'  >
-                <Typography className='href-subli '>Contato</Typography>
-                </Link>
-                </Box>
-                <Box className='toolbar-login' onClick={goLogout}>
-                    <Button variant="contained" href='/login'>logout</Button>
-                </Box>
-            </Toolbar>
+    var navbarComponent;
+    
+    if(token !== ''){
+        navbarComponent =
+            <AppBar position="static" className='nav'>
+                <Toolbar variant="regular">
+                        <Box >
+                            <img src={imagem} alt="Imagem" width="70px" height="70px" />
+                        </Box>
+                        <Box display="flex" mx={4} className='cursor' >
+                            <Link to='/home' className='text-decorator-none'>
+                                <Typography variant="h6" >
+                                    Home
+                                </Typography>
+                            </Link>
+                            <Link to="/postagens" className="text-decorator-none">
+                                <Typography variant="h6" >
+                                    Postagens
+                                </Typography>
+                            </Link>
+                            <Link to="/temas" className="text-decorator-none">
+                                <Typography variant="h6" >
+                                    Temas
+                                </Typography>
+                            </Link>
+                            <Link to='#meu-footer' className="text-decorator-none">
+                                <Typography variant="h6" >
+                                    Contato
+                                </Typography>
+                            </Link>
+                            <Link to="/perfil" className="text-decorator-none" >
+                                <Typography variant="h6" >
+                                    Perfil
+                                </Typography>
+                            </Link>
+                        </Box>
+                    <Box display="flex">
+                        <Box mx={4}  >
+                        <Link to="/login">
+                            <Button variant="outlined" style={{ borderColor: "white",fontWeight: 'bold', backgroundColor: "#96BB7C", color: "#ffffff" }} >Sair</Button>
+                            </Link>
+                        </Box>
+                    </Box>
+                </Toolbar>
             </AppBar>
-        </>
-    )
+}
+return (
+    <>
+    {navbarComponent}
+    </>
+)
 }
 
 export default Navbar;

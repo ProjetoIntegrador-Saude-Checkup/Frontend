@@ -32,18 +32,24 @@
     color: #968c8c;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 14px;
-    padding-top: 5px;
+    padding-top: 0;
     text-align: left;
     display: flex;
     font-size: larger;
+    margin: 0%;
 }
 
 .redes {
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    padding: 0;
 }
 
 .iconGit{
     padding-top: 50px ;
+    width: 30px !important;
 } 
+
+.redesIcon{
+    padding-top: 10px ;
+}

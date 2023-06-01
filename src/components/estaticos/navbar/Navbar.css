@@ -1,44 +1,27 @@
-.appbar {
-    height: 10% !important;
-    background-color: #62929E!important;
-    position: fixed !important;
-    display: block !important;
+.cursor {
+    cursor: pointer;
+    color: white !important;
+    justify-content: space-evenly !important;
+    width: 70%;
 }
 
-.toolbar {
-    background-color: #62929E!important;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
+.text-decorator-none{
+    text-decoration: none !important;
+    color: #2A7CC7 !important;
+    font-family: 'Montserrat' !important;
+    font-weight: '700' !important;
 }
 
-.toolbar-menu{
-    width: 80vw;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
+.nav{
+    background-color:transparent!important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    box-shadow: none !important;
 }
 
-.toolbar-logo{
-    width: 5%;
-}
-
-.toolbar-login{
-    width: 20vw;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.href-subli{
-    text-decoration: none;
-    color: white;
+.box2{
+    justify-content: flex-end !important;
 }
