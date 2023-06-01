@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText, Box, withStyles, createStyles, InputBase, Theme } from "@material-ui/core"
 import './CadastroPostagem.css';
 import { useNavigate, useParams } from 'react-router-dom'
 import Tema from '../../../models/Tema';
@@ -8,6 +8,86 @@ import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
+
+const BootstrapInput = withStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            'label + &': {
+                marginTop: theme.spacing(2),
+                color:'black',
+            },
+        },
+        input: {
+            borderRadius: 4,
+            position: 'relative',
+            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            border: '1px solid #7a959c',
+            fontSize: 16,
+            padding: '16px 0px 16px 14px',
+            color: 'black',
+            transition: theme.transitions.create(['border-color', 'box-shadow']),
+            // Use the system font instead of the default Roboto font.
+            fontFamily: [
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                '"Helvetica Neue"',
+                'Arial',
+                'sans-serif',
+                '"Apple Color Emoji"',
+                '"Segoe UI Emoji"',
+                '"Segoe UI Symbol"',
+            ].join(','),
+            '&:focus': {
+                backgroundColor: 'rgba(255, 255, 255, 0.6)',
+                borderRadius: 4,
+                border: '0.8px solid #7a959c',
+                boxShadow: '0 0 0 0.08rem rgba(118, 38, 114, 1)',
+               
+            },
+        },
+    }),
+)(InputBase);
+
+//text estilizado
+const StyledTitle = withStyles({
+    root: {
+        color: '#155263',
+        paddingTop: '3rem',
+        paddingBottom: '1rem',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+})(Typography);
+
+//textfield estilizado
+const FormStyled = withStyles({
+    root: {
+        '& label.Mui-focused': {
+            color: '#762672',
+        },
+        '& label': {
+            color: '#547f8a',
+        },
+        '& .MuiInput-underline:after': {
+            borderBottomColor: '#762672',
+        },
+        '& .MuiOutlinedInput-root': {
+            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            '& fieldset': {
+                borderColor: '#7a959c',
+            },
+            '&:hover fieldset': {
+                borderColor: '#762672',
+                backgroundColor: 'rgba(255, 255, 255, 0.24)',
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: '#762672',
+            },
+        },
+    }
+})(TextField);
 
 function CadastroPostagem() {
     let navigate = useNavigate();
@@ -135,35 +215,43 @@ function CadastroPostagem() {
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+        <Box marginTop={15}>
+            <Container maxWidth="sm">
+                <Box className='postForm' paddingX={8} borderRadius={4} border={1}>
 
-                <FormControl >
-                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-                    <Select
-                        labelId="demo-simple-select-helper-label"
-                        id="demo-simple-select-helper"
-                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
-                            headers: {
-                                'Authorization': token
-                            }
-                        })}>
-                        {
-                            temas.map(temas => (
-                                <MenuItem value={temas.id}>{temas.assunto}</MenuItem>
-                            ))
-                        }
-                    </Select>
-                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" className="finalizar">
-                        Finalizar
-                    </Button>
-                </FormControl>
-            </form>
-        </Container>
+                    <form onSubmit={onSubmit}>
+                        <StyledTitle variant="h4">Cadastrar Postagem</StyledTitle>
+                        <FormStyled value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+                        <FormStyled value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+
+                        <FormControl variant="outlined" style={{width:'422px'}}>
+                        <InputLabel id="demo-mutiple-chip-label" className='txtTema'>tema</InputLabel>
+                            <Select
+                            variant="outlined"
+                                labelId="demo-simple-select-helper-label"
+                                id="demo-simple-select-helper"
+                                onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                                    headers: {
+                                        'Authorization': token
+                                    }
+                                })}
+                                input={<BootstrapInput />}
+                            >
+                                {
+                                    temas.map(temas => (
+                                        <MenuItem value={temas.id}>{temas.assunto}</MenuItem>
+                                    ))
+                                }
+                            </Select>
+                            <FormHelperText style={{marginLeft:'0px'}}>Escolha um tema para a postagem</FormHelperText>
+                            <Button type="submit" variant="contained" className='btnEnviar'>
+                                Enviar
+                             </Button> 
+                        </FormControl>
+                    </form>
+                </Box>
+            </Container>
+        </Box>
     )
 }
 export default CadastroPostagem;
