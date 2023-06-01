@@ -22,7 +22,7 @@ function Footer() {
     <Box>
         <h4 className='titulos'>SOBRE O PROJETO</h4>
         <p className="texto">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatibus doloremque dolorem ratione itaque impedit ipsam qui veniam consequuntur. Laboriosam dignissimos totam provident dolorum suscipit quasi aspernatur voluptatem tempora ex. </p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas voluptatibus doloremque dolorem ratione itaque impedit ipsam qui veniam consequuntur. Laboriosam dignissimos totam provident dolorum suscipit quasi aspernatur voluptatem tempora ex. </p>
     </Box>
 </Grid>
 

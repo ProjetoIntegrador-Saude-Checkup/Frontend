@@ -11,14 +11,14 @@
     align-self: stretch;
     flex-grow: 0;
     padding: 19px;
-    
+
 }
 
 .swiper-pagination-bullets {
     display: none;
 }
 
-.slideDev{
+.slideDev {
     background-color: #FFFFFF;
     box-shadow: 4px 13px 19px rgba(0, 0, 0, 0.07);
 }
@@ -35,9 +35,7 @@
     margin-right: auto;
 }
 
-.swiper-button-prev{
-    
-}
+.swiper-button-prev {}
 
 .imgDev {
     padding-top: 30px;
@@ -55,33 +53,73 @@
     letter-spacing: 0.2px;
     color: #737373;
     justify-content: center;
-   padding-top: 40px;
+    padding-top: 40px;
 }
 
 .textoSlideDev h6 {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.2px;
     color: #737373;
     margin: 0;
+
+    text-align: center;
 }
 
-.textoSlideDev h5 { 
-    font-size: 16px;
+.textoSlideDev h5 {
+    font-size: 19px;
     letter-spacing: 0.1px;
     color: #252B42;
     margin: 0;
+
+    text-align: center;
 }
 
 .textoSlideDev p {
     width: 402px;
     font-weight: 400;
     font-size: 14px;
+    text-align: justify;
     letter-spacing: 0.2px;
-    color: #737373;
+    color: #252B42;
+    ;
     margin: 0;
 }
 
-.subtitulosDevs{
+.subtitulosDevs {
     padding-top: 20px;
     width: 300px;
+}
+
+.imgRedes {
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.imgRedes img {
+    position: relative;
+    left: 79px;
+    /* Mova a imagem 20 pixels para a direita */
+}
+
+.imgRedes img {
+    margin-right: 5px;
+    /* Define o espaço entre as imagens */
+}
+
+
+.imgContainer {
+    display: flex;
+}
+
+.imgContainer a {
+    margin-right: 10px;
+    vertical-align: top;
+    /* Espaçamento entre as imagens */
+}
+
+.imgContainer a {
+    display: inline-block;
+    margin-right: 300px;
+    /* Espaçamento entre as imagens */
 }
