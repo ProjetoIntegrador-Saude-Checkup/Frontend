@@ -17,8 +17,7 @@ function Home() {
                         <Box>
                             <h5>Bem-vindo(a)</h5>
                             <h1>Conheça a Saúde-Checkup</h1>
-                            <p>O projeto tem como intuito informar e manter a população atualizada, essa rede social irá aumentar a veracidade das informações, promover o bem-estar e poder atingir um maior número de pessoas com informações sobre saúde e bem estar. 
-</p>
+                            
                         </Box>
                         <Box>
                         <Link to='/cadastro'>

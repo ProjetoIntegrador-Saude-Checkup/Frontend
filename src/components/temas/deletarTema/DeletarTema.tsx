@@ -77,15 +77,15 @@ function DeletarTema() {
   return (
     <>
       <Box m={2}>
-        <Card variant="outlined" style={{paddingTop:"100px" }}>
-          <CardContent>
+        <Card variant="outlined" className="caixa">
+          <CardContent >
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
                 Deseja deletar o Tema:
               </Typography>
-              <Typography color="textSecondary">
+              <Typography variant="h4" component="h2">
                 {tema?.assunto}
-              </Typography>
+              </Typography>                
             </Box>
           </CardContent>
           <CardActions>

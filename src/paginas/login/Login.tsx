@@ -23,13 +23,13 @@ const StyledTitle = withStyles({
 const FormStyled = withStyles({
     root: {
         '& label.Mui-focused': {
-            color: '#762672',
+            color: '#62929E ',
         },
         '& label': {
             color: '#547f8a',
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#762672',
+            borderBottomColor: '#62929E ',
         },
         '& .MuiOutlinedInput-root': {
             backgroundColor: 'rgba(255, 255, 255, 0.5)',
@@ -37,11 +37,11 @@ const FormStyled = withStyles({
                 borderColor: '#7a959c',
             },
             '&:hover fieldset': {
-                borderColor: '#762672',
+                borderColor: '#62929E ',
                 backgroundColor: 'rgba(255, 255, 255, 0.24)',
             },
             '&.Mui-focused fieldset': {
-                borderColor: '#762672',
+                borderColor: '#62929E ',
             },
         },
     }
@@ -118,7 +118,7 @@ function Login() {
                         <FormStyled value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
                         <FormStyled value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
-                            <Button type='submit' variant='contained' style={{ backgroundColor: '#537A56', color: 'white' }}>
+                            <Button type='submit' variant='contained' className="logar">
                                 Logar
                             </Button>
                         </Box>

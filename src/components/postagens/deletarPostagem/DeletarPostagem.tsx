@@ -72,16 +72,22 @@ function DeletarPostagem() {
           }
   return (
     <>
-      <Box style={{paddingTop:"100px" }} m={2}>
-        <Card variant="outlined" >
+      <Box style={{paddingTop:"100px" }} m={2} >
+        <Card variant="outlined" className='caixas' >
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
                 Deseja deletar a Postagem:
               </Typography>
-              <Typography color="textSecondary" >
-              {post?.titulo}
-              </Typography>
+          <Typography variant="h4" component="h4">
+                    {post?.tema?.assunto}
+                  </Typography>
+                  <Typography variant="h5" component="h4" gutterBottom>
+                    {post?.titulo}
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    {post?.texto}
+                  </Typography>
             </Box>
 
           </CardContent>

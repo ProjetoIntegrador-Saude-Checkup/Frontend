@@ -21,13 +21,13 @@ const StyledTitle = withStyles({
 const FormStyled = withStyles({
     root: {
         '& label.Mui-focused': {
-            color: '#762672',
+            color: '#62929E ',
         },
         '& label': {
             color: '#547f8a',
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#762672',
+            borderBottomColor: '#62929E ',
         },
         '& .MuiOutlinedInput-root': {
             backgroundColor:'rgba(255, 255, 255, 0.5)',
@@ -35,11 +35,11 @@ const FormStyled = withStyles({
                 borderColor: '#7a959c',
             },
             '&:hover fieldset': {
-                borderColor: '#762672',
+                borderColor: '#62929E ',
                 backgroundColor:'rgba(255, 255, 255, 0.24)',
             },
             '&.Mui-focused fieldset': {
-                borderColor: '#762672',
+                borderColor: '#62929E ',
             },
         },
 }})(TextField);
@@ -112,7 +112,7 @@ function CadastroUsuario() {
                                     Cadastrar
                             </Button>
                             <Link to='/login' className='text-decorator-none'>
-                                <Button variant='contained' className='btnCancelar' color='secondary'>
+                                <Button variant='contained' className='btnCancelar'>
                                     Cancelar
                                 </Button>
                             </Link>
