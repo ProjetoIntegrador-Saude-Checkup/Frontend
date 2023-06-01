@@ -17,10 +17,10 @@ function Home() {
                         <Box>
                             <h5>Bem-vindo(a)</h5>
                             <h1>Conheça a Saúde-Checkup</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam beatae sequi laboriosam pariatur iusto ipsa impedit accusantium quo voluptatibus aliquam consectetur saepe voluptas ea adipisci libero, iste, laborum tenetur magni?</p>
+                            
                         </Box>
                         <Box>
-                            <Link to='/cadastro'>
+                        <Link to='/cadastro'>
                                 <button className="botaoCadastro"><span>Cadastre-se</span></button>
                             </Link>
                             <Link to='/sobre'>

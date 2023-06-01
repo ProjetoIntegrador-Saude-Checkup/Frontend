@@ -8,11 +8,13 @@ function HomePosts() {
     return (
         <>
             <Grid className='containerHomePosts' container>
-                <Grid className='textoHomePosts' item xs={12} sm={7} >
+                <Grid className='textoHomePosts' item xs={12} sm={6} >
                     <Box>
-                        <h6>Rede Social</h6>
+                        <h6>Saúde Checku-Up</h6>
                         <h2>Confira nossas postagens</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident id qui sint, beatae ipsa delectus. Expedita, ducimus! Laborum quae odit, veniam amet iste non tempore sit cum iure atque vero.</p>
+                        <p>Deseja saber dicas de saúde para cuidar bem de você e de sua família, a fim de conquistar maior bem-estar e qualidade de vida? Aqui, você tem acesso a dicas de saúde relacionadas a alimentação, atividade física, saúde e bem-estar e também diversas curiosidades.
+
+</p>
                     </Box>
                 </Grid>
                 <Grid className='carrosselPosts' item xs={12} sm={12} >

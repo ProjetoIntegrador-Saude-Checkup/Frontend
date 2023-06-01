@@ -1,0 +1,21 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+.botaoatucan{
+    cursor: pointer;
+    color: #2A7CC7;
+}
+.botaoadicionar{
+    font-size: xx-large !important;
+    color: #96BB7C !important;
+    position: fixed !important;
+    Width :75px !important;
+    Height : 89px !important;
+    right: 5px!important;
+    bottom: 5px!important;
+}
+.caixa{
+    margin: 15px;
+    right: 50%;
+    margin-right: 30%;
+}
