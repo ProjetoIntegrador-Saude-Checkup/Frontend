@@ -38,9 +38,13 @@ if (token !== '') {
 {/* Sobre o projeto */}
 <Grid item xs={5}>
     <Box>
-        <h4 className='titulos'>SOBRE O PROJETO</h4>
-        <p className="texto">
-        O projeto consiste em uma rede social que tem como objetivo informar e atualizar a cidade, aumentando a veracidade das informações e promovendo o bem-estar da população. Essa plataforma busca atingir um maior número de pessoas, oferecendo informações sobre saúde, eventos, campanhas de vacinação, exames e locais de atendimento médico em hospitais e postos de saúde. Isso é necessário devido à falta de acesso a informações que afeta a saúde da população. </p>
+        <h4 className='titulos'>Principais telefones de emergência e serviços públicos:</h4>
+        <p className="texto">Prevenção às drogas 132</p>
+        <p className="texto">Delegacia da mulher 180</p>
+        <p className="texto">Centro de valorização da vida 141</p>
+        <p className="texto">SUS 136</p>
+        <p className="texto">Secretaria de saúde 160 </p>
+       
     </Box>
 </Grid>
 

@@ -7,7 +7,7 @@ import Devs from '../../components/seçoes/desenvolvedores/Devs';
 
 function Home() {
     return (
-        <>
+        <><div className="marge">
             <Grid className='background' container direction='row'>
                 <div className='retanguloMenor'></div>
                 <div className='retanguloMaior'></div>
@@ -20,11 +20,11 @@ function Home() {
                             
                         </Box>
                         <Box>
-                        <Link to='/cadastro'>
+                        <Link to='/cadastrousuario'>
                                 <button className="botaoCadastro"><span>Cadastre-se</span></button>
                             </Link>
-                            <Link to='/sobre'>
-                                <button className="botaoSobre"><span>Saiba mais</span></button>
+                            <Link to='/login'>
+                                <button className="botaoSobre"><span>Login</span></button>
                             </Link>
                         </Box>
                     </Grid>
@@ -37,7 +37,7 @@ function Home() {
             </Grid>
             <SobreProjeto />
             <HomePosts />
-            <Devs />
+            <Devs /></div>
         </>
     );
 }

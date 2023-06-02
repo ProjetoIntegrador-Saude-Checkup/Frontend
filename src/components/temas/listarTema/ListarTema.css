@@ -15,7 +15,11 @@
     color: #2A7CC7;
     }
     .cx{
+        border-radius: 45px !important;
         margin: 15px;
         right: 50%;
-        margin-right: 50%;
+        margin-right: 70%;
+    }
+    .marge{
+        margin-top: 90px;
     }

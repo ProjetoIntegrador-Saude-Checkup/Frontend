@@ -38,10 +38,11 @@ function Navbar() {
         navbarComponent =
             <AppBar position="static" className='nav'>
                 <Toolbar variant="regular">
+                    
                         <Box >
                             <img src={imagem} alt="Imagem" width="70px" height="70px" />
                         </Box>
-                        <Box display="flex" mx={4} className='cursor' >
+                        <Box display="flex" mx={4} className='cursor'  >
                             <Link to='/home' className='text-decorator-none'>
                                 <Typography variant="h6" >
                                     Home
@@ -56,22 +57,20 @@ function Navbar() {
                                 <Typography variant="h6" >
                                     Temas
                                 </Typography>
-                            </Link>
-                            <Link to='#meu-footer' className="text-decorator-none">
-                                <Typography variant="h6" >
-                                    Contato
-                                </Typography>
+                  
                             </Link>
                             <Link to="/perfil" className="text-decorator-none" >
                                 <Typography variant="h6" >
                                     Perfil
-                                </Typography>
-                            </Link>
+                                </Typography>          
+                                
+                                </Link>
+
                         </Box>
-                    <Box display="flex">
+                    <Box display="flex" >
                         <Box mx={4}  >
                         <Link to="/login">
-                            <Button variant="outlined" style={{ borderColor: "white",fontWeight: 'bold', backgroundColor: "#96BB7C", color: "#ffffff" }} >Sair</Button>
+                            <Button variant="outlined"className="box2" >Sair</Button>
                             </Link>
                         </Box>
                     </Box>

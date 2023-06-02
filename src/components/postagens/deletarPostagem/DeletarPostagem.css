@@ -11,7 +11,11 @@
     color: #ffffff!important;
 }
 .caixas{
+    border-radius: 45px !important;
     margin: 15px;
     right: 50%;
     margin-right: 30%;
+}
+.marge{
+    margin-top: 90px;
 }

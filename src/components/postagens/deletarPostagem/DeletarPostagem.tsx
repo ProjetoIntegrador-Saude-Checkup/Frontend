@@ -71,23 +71,24 @@ function DeletarPostagem() {
             navigate('/postagens')
           }
   return (
-    <>
-      <Box style={{paddingTop:"100px" }} m={2} >
+    <><div className="marge">
+      <Box  m={2} >
         <Card variant="outlined" className='caixas' >
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
                 Deseja deletar a Postagem:
               </Typography>
-          <Typography variant="h4" component="h4">
+              <Typography variant="body1" component="p">
                     {post?.tema?.assunto}
                   </Typography>
-                  <Typography variant="h5" component="h4" gutterBottom>
+                  <Typography variant="h4" component="h4" gutterBottom>
                     {post?.titulo}
                   </Typography>
-                  <Typography variant="body2" component="p">
+                  <Typography variant="body1" component="p">
                     {post?.texto}
                   </Typography>
+
             </Box>
 
           </CardContent>
@@ -107,6 +108,7 @@ function DeletarPostagem() {
           </CardActions>
         </Card>
       </Box>
+      </div>
     </>
   );
 }

@@ -10,8 +10,9 @@
     background-color: #2A7CC7!important;
     color: #ffffff!important;
 }
-.caixa{
+.cx{
+    border-radius: 45px !important;
     margin: 15px;
     right: 50%;
-    margin-right: 30%;
+    margin-right: 70%;
 }

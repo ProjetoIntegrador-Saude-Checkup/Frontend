@@ -75,9 +75,9 @@ function DeletarTema() {
           }
           
   return (
-    <>
+    <>    <div className="marge">
       <Box m={2}>
-        <Card variant="outlined" className="caixa">
+        <Card variant="outlined" className="cx">
           <CardContent >
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
@@ -104,6 +104,7 @@ function DeletarTema() {
           </CardActions>
         </Card>
       </Box>
+      </div>
     </>
   );
 }

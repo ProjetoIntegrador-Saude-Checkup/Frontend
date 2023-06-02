@@ -14,8 +14,13 @@
     right: 5px!important;
     bottom: 5px!important;
 }
-.caixa{
+.caixa{ 
+   
+    border-radius: 45px !important;
     margin: 15px;
     right: 50%;
     margin-right: 30%;
+}
+.marge{
+    margin-top: 90px;
 }

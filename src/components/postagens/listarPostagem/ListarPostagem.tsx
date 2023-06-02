@@ -13,6 +13,7 @@ import { toast } from 'react-toastify';
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import Navbar from '../../estaticos/navbar/Navbar';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
@@ -56,22 +57,26 @@ function ListaPostagem() {
 
 
   return (
-    <>
+    <><div className="marge">
       {
+        
         posts.map(post => (
-
+         
           <Box mx={5} >
             <Card variant="outlined" className="caixa" >
                 <CardContent >
-                  <Typography variant="h4" component="h4">
+                <Typography variant="body1" component="p">
                     {post.tema?.assunto}
                   </Typography>
-                  <Typography variant="h5" component="h4" gutterBottom>
+                  <Typography variant="h4" component="h4" gutterBottom>
                     {post.titulo}
                   </Typography>
-                  <Typography variant="body2" component="p">
+                  <Typography variant="body1" component="p">
                     {post.texto}
                   </Typography>
+                  <Typography variant="h6" component="h6">
+                  Data: {Intl.DateTimeFormat('pt-BR', { }).format(new Date(post.data))}
+                </Typography>
 
                 </CardContent>
                 <CardActions>
@@ -100,7 +105,8 @@ function ListaPostagem() {
               </Link>
           </Box>
         ))
-      }
+        
+      }</div>
     </>
   )
 }

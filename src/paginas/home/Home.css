@@ -86,8 +86,11 @@
 }
 
 .botaoCadastro {
-    color: #fff;
-    background: #96BB7C;
+    color: #96BB7C;
+    
+    background: transparent;
+
+   
 }
 
 .botaoCadastro:hover {
@@ -98,9 +101,9 @@
 }
 
 .botaoSobre {
-    color: #96BB7C;
+     color: #fff;
+    background: #96BB7C;
     margin-left: 15px;
-    background: transparent;
 }
 
 .botaoSobre:hover {

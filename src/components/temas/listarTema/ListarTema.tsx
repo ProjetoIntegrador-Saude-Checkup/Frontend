@@ -53,7 +53,7 @@ function ListaTemas() {
   }, [temas.length])
 
   return (
-    <>
+    <><div className="marge">
 
       {
         temas.map(temas => (
@@ -63,6 +63,7 @@ function ListaTemas() {
                 <Typography variant="h4" component="h2">
                   {temas.assunto}
                 </Typography>
+
               </CardContent>
               <CardActions>
                 <Box display="flex" justifyContent="center" mb={1.5} >
@@ -92,7 +93,7 @@ function ListaTemas() {
           </Box>
         ))
       }
-
+</div>
     </>
   );
 }
