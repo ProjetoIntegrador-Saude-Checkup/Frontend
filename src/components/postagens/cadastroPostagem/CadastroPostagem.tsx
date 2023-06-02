@@ -120,7 +120,8 @@ function CadastroPostagem() {
         {
             id: 0,
             assunto: '',
-            status: true
+            status: true,
+            data:''
         })
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
