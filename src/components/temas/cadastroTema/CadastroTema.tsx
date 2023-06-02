@@ -55,9 +55,10 @@ function CadastroTema() {
         (state) => state.tokens
     )
     const [tema, setTemas] = useState<Tema>({
-            id: 0,
-            assunto: '',
-            status: true
+        id: 0,
+        assunto: '',
+        status: true,
+        data: ''
     })
 
     useEffect(() => {
