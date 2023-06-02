@@ -33,7 +33,7 @@ function Footer() {
 
 if (token !== '') {
     footerComponent =
-<Grid id="meu-footer" className='footer' style={{ backgroundColor: "#ffffff", width: "100%", margin: 0 }} spacing={3} container direction="row" justifyContent="center">
+<Grid container id="meu-footer" className='footer' xs={12} style={{ backgroundColor: "#ffffff",}} spacing={3}  direction="row" justifyContent="center">
 
 {/* Sobre o projeto */}
 <Grid item xs={5}>
