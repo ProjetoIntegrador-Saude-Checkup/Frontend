@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //consumo da API do backend na núvem com axios
 export const api = axios.create({
-    baseURL: 'https://saudecheckup.onrender.com'
+    baseURL: import.meta.env.VITE_API_URL
 })
 
 export const login = async(url:any, dados:any, setDado:any) => {
