@@ -57,7 +57,6 @@ function Navbar() {
                                 <Typography variant="h6" >
                                     Temas
                                 </Typography>
-                  
                             </Link>
                             <Link to="/perfil" className="text-decorator-none" >
                                 <Typography variant="h6" >
@@ -70,7 +69,7 @@ function Navbar() {
                     <Box display="flex" >
                         <Box mx={4}  >
                         <Link to="/login">
-                            <Button variant="outlined"className="box2" >Sair</Button>
+                            <Button onClick={goLogout} variant="outlined"className="box2" >Sair</Button>
                             </Link>
                         </Box>
                     </Box>

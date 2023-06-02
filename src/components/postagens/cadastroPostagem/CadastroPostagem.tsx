@@ -246,7 +246,7 @@ function CadastroPostagem() {
                             <FormHelperText style={{marginLeft:'0px'}}>Escolha um tema para a postagem</FormHelperText>
                             <Button type="submit" variant="contained" className='btnEnviar'>
                                 Enviar
-                             </Button> 
+                            </Button> 
                         </FormControl>
                     </form>
                 </Box>
