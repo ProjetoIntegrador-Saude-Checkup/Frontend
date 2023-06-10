@@ -6,7 +6,7 @@ import {Card, CardActions, CardContent, Typography } from '@material-ui/core';
 import {Box} from '@mui/material';
 import './ListarPostagem.css';
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
 
@@ -14,18 +14,23 @@ import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import Navbar from '../../estaticos/navbar/Navbar';
+import { addToken } from '../../../store/token/Action';
 
 function ListaPostagem() {
-  const [posts, setPosts] = useState<Postagem[]>([])
+  
+  let navigate = useNavigate();
+  const [posts, setPosts] = useState<any[]>([])
+
+  const dispatch = useDispatch()
 
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   )
-  let navigate = useNavigate();
+  
 
 
   useEffect(() => {
-    if (token == "") {
+    if (token === "") {
       toast.error('Você precisa estar logado para continuar!', {
         position: "top-right",
         autoClose: 3000,
@@ -42,12 +47,17 @@ function ListaPostagem() {
   }, [token])
 
   async function getPost() {
-    await busca("/postagens", setPosts, {
-      headers: {
-        'Authorization': token
+    try {
+      await busca('/postagens', setPosts, {
+        headers: { Authorization: token },
+      });
+    } catch (error: any) {
+      if (error.response?.status === 403) {
+        dispatch(addToken(''))
       }
-    })
+    }
   }
+
 
   useEffect(() => {
 

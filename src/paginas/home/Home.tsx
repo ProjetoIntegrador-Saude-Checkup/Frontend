@@ -1,11 +1,37 @@
 import { Grid, Box } from '@material-ui/core';
 import './Home.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SobreProjeto from '../../components/seçoes/sobreProjeto/SobreProjeto';
 import HomePosts from '../../components/seçoes/homePosts/HomePosts';
 import Devs from '../../components/seçoes/desenvolvedores/Devs';
+import { UserState } from '../../store/token/Reducer';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 function Home() {
+    let navigate = useNavigate();
+  
+    const token = useSelector<UserState, UserState['tokens']>(
+        (state) => state.tokens
+    )
+  
+    useEffect(() => {
+        if (token == "") {
+          toast.error('Você precisa estar logado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+  navigate("/login")
+        }
+    }, [token])
+    
     return (
         <><div className="marge">
             <Grid className='background' container direction='row'>

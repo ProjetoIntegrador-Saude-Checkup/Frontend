@@ -6,19 +6,24 @@ import {useNavigate, useParams } from 'react-router-dom';
 import { buscaId, deleteId } from '../../../services/Service';
 import Tema from '../../../models/Tema';
 import { toast } from 'react-toastify';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
+import { addToken } from '../../../store/token/Action';
 
 
 
 function DeletarTema() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
-    const [tema, setTema] = useState<Tema>()
+
+    const dispatch = useDispatch()
 
     const token = useSelector<UserState, UserState["tokens"]>(
-      (state) => state.tokens
-  )
+      (state) => state.tokens 
+    )
+
+      const [tema, setTema] = useState<Tema>()
+ 
 
     useEffect(() => {
         if (token == "") {
@@ -44,35 +49,57 @@ function DeletarTema() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/temas/${id}`, setTema, {
-            headers: {
-              'Authorization': token
-            }
-          })
+      try {
+        await buscaId(`/temas/${id}`, setTema, {
+          headers: {
+            'Authorization': token
+          }
+        })
+      } catch (error: any) {
+        if (error.response?.status === 403) {
+          dispatch(addToken(''))
         }
-
-        function sim() {
-          navigate('/temas')
-            deleteId(`/temas/${id}`, {
-              headers: {
-                'Authorization': token
-              }
-            });
-            toast.success('Tema deletado com sucesso', {
-              position: "top-right",
-              autoClose: 2000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: false,
-              draggable: false,
-              theme: "colored",
-              progress: undefined,
-              });
+      }
+    }
+    async function sim() {
+      navigate('/temas')
+      try {
+        await deleteId(`/temas/${id}`, {
+          headers: {
+            'Authorization': token
           }
-        
-          function nao() {
-            navigate('/temas')
-          }
+        });
+        toast.success('Tema deletado com sucesso!', {
+          position: 'top-right',
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          theme: 'colored',
+          progress: undefined,
+        });
+      } catch (error: any) {
+        if (error.response?.status === 403) {
+          dispatch(addToken(''))
+        } else {
+          toast.error("Erro ao Deletar Tema", {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'colored',
+            progress: undefined,
+          });
+        }
+      }
+    }
+  
+    function nao() {
+      navigate('/temas')
+    }
           
   return (
     <>    <div className="marge">

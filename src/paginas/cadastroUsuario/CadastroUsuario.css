@@ -1,5 +1,5 @@
 .imagem2{
-  background-image: url(src/assets/images/logobackcadastro.png);
+  background-image: url(https://i.im.ge/2023/06/10/iFk5pM.logobackcadastro.png);
   background-repeat: no-repeat;
   width: 100vh;
   min-height: 100vh;
@@ -20,11 +20,10 @@
   color:white !important;
 }
 
-.btnCadastrar{
-  background-color:#537A56;
-  color: white
+.btncadastrar{
+  background-color:#537A56 !important;
+  color: white!important;
 }
-
 .cadastroForm{
   height:37rem;
   background-color: rgba(0, 51, 255, 0.05);
@@ -35,4 +34,7 @@
 .bg-08-blue{
 background-color: #CCFAFA;
 align-items: center;
+}
+.btnCancelar{
+  margin-right: 20px !important;
 }

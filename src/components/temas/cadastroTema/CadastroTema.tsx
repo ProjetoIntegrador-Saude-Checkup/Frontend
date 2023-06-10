@@ -4,9 +4,10 @@ import {useNavigate, useParams } from 'react-router-dom'
 import './CadastroTema.css';
 import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
+import { addToken } from '../../../store/token/Action';
 
 //text estilizado
 const StyledTitle = withStyles({
@@ -51,14 +52,19 @@ function CadastroTema() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
 
+    const dispatch = useDispatch()
+
+
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     )
-    const [tema, setTemas] = useState<Tema>({
+    const [tema, setTema] = useState<Tema>({
         id: 0,
         assunto: '',
         status: true,
-        data: ''
+        data: '',
+        postagens: []
+
     })
 
     useEffect(() => {
@@ -85,65 +91,105 @@ function CadastroTema() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/temas/${id}`, setTemas, {
-            headers: {
-            'Authorization': token
-            }
-        })
-        }
-
-        function updatedTema(e: ChangeEvent<HTMLInputElement>) {
-
-            setTemas({
-                ...tema,
-                [e.target.name]: e.target.value,
+        try {
+            await buscaId(`/temas/${id}`, setTema, {
+                headers: {
+                    'Authorization': token
+                }
             })
-    
-        }
-
-        async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-            e.preventDefault()
-    
-            if (id !== undefined) {
-                put(`/temas`, tema, setTemas, {
-                    headers: {
-                        'Authorization': token
-                    }
-                })
-                toast.success('Tema atualizado com sucesso', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: false,
-                    theme: "colored",
-                    progress: undefined,
-                });
-            } else {
-                post(`/temas`, tema, setTemas, {
-                    headers: {
-                        'Authorization': token
-                    }
-                })
-                toast.success('Tema cadastrado com sucesso', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: false,
-                    theme: "colored",
-                    progress: undefined,
-                });
+        } catch (error: any) {
+            if (error.response?.status === 403) {
+                dispatch(addToken(''))
             }
-            back()
-    
         }
-    
-        function back() {
-            navigate('/temas')
+    }
+
+    function updatedTema(e: ChangeEvent<HTMLInputElement>) {
+
+        setTema({
+            ...tema,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault()
+
+        if (id !== undefined) {
+            try {
+                await put(`/temas`, tema, setTema, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                toast.success('Tema atualizado com sucesso!', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
+            } catch (error: any) {
+                if (error.response?.status === 403) {
+                    dispatch(addToken(''))
+                } else {
+                    toast.error("Erro ao Atualizar o Tema", {
+                        position: 'top-right',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: 'colored',
+                        progress: undefined,
+                    });
+                }
+            }
+        } else {
+            try {
+                await post(`/temas`, tema, setTema, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                toast.success('Tema cadastrado com sucesso!', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
+            } catch (error: any) {
+                if (error.response?.status === 403) {
+                    dispatch(addToken(''))
+                } else {
+                    toast.error("Erro ao Cadastrar o Tema", {
+                        position: 'top-right',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: 'colored',
+                        progress: undefined,
+                    });
+                }
+            }
         }
+        back()
+
+    }
+
+    function back() {
+        navigate('/temas')
+    }
+
 
     return (
         <Box marginTop={20}>

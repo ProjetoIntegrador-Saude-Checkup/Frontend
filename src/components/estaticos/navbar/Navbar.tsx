@@ -40,7 +40,7 @@ function Navbar() {
                 <Toolbar variant="regular">
                     
                         <Box >
-                            <img src={imagem} alt="Imagem" width="70px" height="70px" />
+                            <img src="https://i.im.ge/2023/06/10/iFkj1Y.Logocoracao.png" alt="Imagem" width="70px" height="70px" />
                         </Box>
                         <Box display="flex" mx={4} className='cursor'  >
                             <Link to='/home' className='text-decorator-none'>

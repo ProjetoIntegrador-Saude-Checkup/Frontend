@@ -5,9 +5,10 @@ import { useNavigate, useParams } from 'react-router-dom'
 import Tema from '../../../models/Tema';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
+import { addToken } from '../../../store/token/Action';
 
 const BootstrapInput = withStyles((theme: Theme) =>
     createStyles({
@@ -94,13 +95,16 @@ function CadastroPostagem() {
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
 
+    const dispatch = useDispatch()
 
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     )
-
+    const userId = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    )
     useEffect(() => {
-        if (token == "") {
+        if (token === "") {
             toast.error('Você precisa estar logado', {
                 position: "top-right",
                 autoClose: 2000,
@@ -175,37 +179,71 @@ function CadastroPostagem() {
         e.preventDefault()
 
         if (id !== undefined) {
-            put(`/postagens`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
+            try {
+                await put(`/postagens`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                toast.success('Postagem atualizada com sucesso', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
+            } catch (error: any) {
+                if (error.response?.status === 403) {
+                    dispatch(addToken(''))
+                } else {
+                    toast.error("Erro ao Atualizar Postagem", {
+                        position: 'top-right',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: 'colored',
+                        progress: undefined,
+                    });
                 }
-            })
-            toast.success('Postagem atualizada com sucesso', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            });
+            }
         } else {
-            post(`/postagens`, postagem, setPostagem, {
-                headers: {
-                    'Authorization': token
+            try {
+                await post(`/postagens`, postagem, setPostagem, {
+                    headers: {
+                        'Authorization': token
+                    }
+                })
+                toast.success('Postagem cadastrada com sucesso', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
+            } catch (error: any) {
+                if (error.response?.status === 403) {
+                    dispatch(addToken(''))
+                } else {
+                    toast.error("Erro ao Cadastrar Postagem", {
+                        position: 'top-right',
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: false,
+                        draggable: false,
+                        theme: 'colored',
+                        progress: undefined,
+                    });
                 }
-            })
-            toast.success('Postagem cadastrada com sucesso', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "colored",
-                progress: undefined,
-            });
+            }
         }
         back()
 
@@ -214,6 +252,7 @@ function CadastroPostagem() {
     function back() {
         navigate('/postagens')
     }
+
 
     return (
         <Box marginTop={15}>

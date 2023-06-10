@@ -6,16 +6,19 @@ import Tema from '../../../models/Tema';
 import './ListarTema.css';
 import { useNavigate } from 'react-router-dom';
 import { busca } from '../../../services/Service';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
 
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import { addToken } from '../../../store/token/Action';
 
 function ListaTemas() {
   const [temas, setTemas] = useState<Tema[]>([])
+
+  const dispatch = useDispatch()
 
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
@@ -39,17 +42,25 @@ function ListaTemas() {
   }, [token])
 
 
-  async function getTemas() {
-    await busca("/temas", setTemas, {
-      headers: {
-        'Authorization': token
+ 
+  async function getTema() {
+
+    try {
+      await busca("/temas", setTemas, {
+        headers: {
+          'Authorization': token
+        }
+      })
+    } catch (error: any) {
+      if (error.response?.status === 403) {
+        dispatch(addToken(''))
       }
-    })
+    }
   }
 
 
   useEffect(() => {
-    getTemas()
+    getTema()
   }, [temas.length])
 
   return (
