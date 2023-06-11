@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UserState } from '../../../store/token/Reducer';
 import { toast } from 'react-toastify';
 import { addToken } from '../../../store/token/Action';
+import User from '../../../models/User';
 
 const BootstrapInput = withStyles((theme: Theme) =>
     createStyles({
@@ -127,18 +128,29 @@ function CadastroPostagem() {
             status: true,
             data:''
         })
+
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
         texto: '',
         data: '',
-        tema: null
+        tema: null,
+        usuario: null
+    })
+
+    const [usuario, setUsuario] = useState<User>({
+        id: +userId,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
     })
 
     useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: usuario
         })
     }, [tema])
 

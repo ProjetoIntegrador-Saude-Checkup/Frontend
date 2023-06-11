@@ -1,26 +1,43 @@
-.text-decorator-none{
+.text-decorator-none {
     text-decoration: none;
 }
-.botaoatucan{
+
+.botaoatucan {
     cursor: pointer;
     color: #2A7CC7;
 }
-.botaoadicionar{
+
+.botaoadicionar {
     font-size: xx-large !important;
     color: #96BB7C !important;
     position: fixed !important;
-    Width :75px !important;
-    Height : 89px !important;
-    right: 5px!important;
-    bottom: 5px!important;
+    Width: 75px !important;
+    Height: 89px !important;
+    right: 5px !important;
+    bottom: 5px !important;
 }
-.caixa{ 
-   
+
+.caixa {
+
     border-radius: 45px !important;
     margin: 15px;
     right: 50%;
     margin-right: 30%;
 }
-.marge{
+
+.marge {
     margin-top: 90px;
+}
+
+.post-user {
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-user img {
+    padding-right: 10px;
+    width: 45px;
+    border-radius: 100%;
 }

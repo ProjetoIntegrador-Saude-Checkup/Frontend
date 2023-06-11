@@ -1,0 +1,15 @@
+.form-user{
+    width: 500px;
+    height:auto;
+    background-color: rgba(204, 250, 250, 0.4);
+    border-color:#62929E !important;
+}
+
+.input-user{
+    width: 100vh;
+}
+
+.btn-atualizar{
+    background-color: #537A56 !important;
+    color: white !important;
+}

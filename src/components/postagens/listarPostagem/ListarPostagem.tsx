@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service'
-import {Card, CardActions, CardContent, Typography } from '@material-ui/core';
-import {Box} from '@mui/material';
+import { Card, CardActions, CardContent, Typography } from '@material-ui/core';
+import { Box } from '@mui/material';
 import './ListarPostagem.css';
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,7 +17,7 @@ import Navbar from '../../estaticos/navbar/Navbar';
 import { addToken } from '../../../store/token/Action';
 
 function ListaPostagem() {
-  
+
   let navigate = useNavigate();
   const [posts, setPosts] = useState<any[]>([])
 
@@ -26,7 +26,7 @@ function ListaPostagem() {
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   )
-  
+
 
 
   useEffect(() => {
@@ -69,53 +69,57 @@ function ListaPostagem() {
   return (
     <><div className="marge">
       {
-        
+
         posts.map(post => (
-         
+
           <Box mx={5} >
             <Card variant="outlined" className="caixa" >
-                <CardContent >
+              <CardContent >
                 <Typography variant="body1" component="p">
-                    {post.tema?.assunto}
-                  </Typography>
-                  <Typography variant="h4" component="h4" gutterBottom>
-                    {post.titulo}
-                  </Typography>
-                  <Typography variant="body1" component="p">
-                    {post.texto}
-                  </Typography>
-                  <Typography variant="h6" component="h6">
-                  Data: {Intl.DateTimeFormat('pt-BR', { }).format(new Date(post.data))}
+                  {post.tema?.assunto}
                 </Typography>
+                <Typography variant="h4" component="h4" gutterBottom>
+                  {post.titulo}
+                </Typography>
+                <Typography variant="body1" component="p">
+                  {post.texto}
+                </Typography>
+                <Typography variant="h6" component="h6">
+                  Data: {Intl.DateTimeFormat('pt-BR', {}).format(new Date(post.data))}
+                </Typography>
+                <div className='post-user'>
+                  <img src={post.usuario?.foto} alt=" " />
+                  <Typography variant="body2" component="p"> {post.usuario?.nome} </Typography>
+                </div>
 
-                </CardContent>
-                <CardActions>
-                  <Box display="flex" justifyContent="center" mb={1.5}>
+              </CardContent>
+              <CardActions>
+                <Box display="flex" justifyContent="center" mb={1.5}>
 
-                    <Link to={`/formularioPostagem/${post.id}`} className="botaoatucan">
-                      <Box mx={1} >
-                          <ModeEditOutlineOutlinedIcon/>
-                      </Box>
-                    </Link>
-                    <Link to={`/deletarPostagem/${post.id}`} className="botaoatucan">
-                      <Box mx={1}>
-                          <DeleteIcon />
-                      </Box>
-                    </Link>
-                  </Box>
-               
-              </CardActions> 
-              
-             </Card>              
-            
-              <Link to={`/formularioPostagem`}  >
-                <Box>
-                  <AddCircleOutlinedIcon className="botaoadicionar"/>
+                  <Link to={`/formularioPostagem/${post.id}`} className="botaoatucan">
+                    <Box mx={1} >
+                      <ModeEditOutlineOutlinedIcon />
+                    </Box>
+                  </Link>
+                  <Link to={`/deletarPostagem/${post.id}`} className="botaoatucan">
+                    <Box mx={1}>
+                      <DeleteIcon />
+                    </Box>
+                  </Link>
                 </Box>
-              </Link>
+
+              </CardActions>
+
+            </Card>
+
+            <Link to={`/formularioPostagem`}  >
+              <Box>
+                <AddCircleOutlinedIcon className="botaoadicionar" />
+              </Box>
+            </Link>
           </Box>
         ))
-        
+
       }</div>
     </>
   )
