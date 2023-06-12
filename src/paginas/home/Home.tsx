@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
 function Home() {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
   
     const token = useSelector<UserState, UserState['tokens']>(
         (state) => state.tokens
@@ -30,7 +30,9 @@ function Home() {
         });
   navigate("/login")
         }
-    }, [token])
+    }, [token, navigate])
+
+    const isLoggedIn = token !== '';
     
     return (
         <><div className="marge">
@@ -44,12 +46,26 @@ function Home() {
                             
                         </Box>
                         <Box>
-                        <Link to='/cadastrousuario'>
-                                <button className="botaoCadastro"><span>Cadastre-se</span></button>
-                            </Link>
-                            <Link to='/login'>
-                                <button className="botaoSobre"><span>Login</span></button>
-                            </Link>
+                            {isLoggedIn ? (
+                    <Link to="/perfil">
+                        <button className="Meu Perfil">
+                        <span>Meu Perfil</span>
+                        </button>
+                    </Link>
+                    ) : (
+                    <>
+                        <Link to="/cadastrousuario">
+                        <button className="botaoCadastro">
+                            <span>Cadastre-se</span>
+                        </button>
+                        </Link>
+                        <Link to="/login">
+                        <button className="botaoSobre">
+                            <span>Login</span>
+                        </button>
+                        </Link>
+                    </>
+                    )}
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={6} >

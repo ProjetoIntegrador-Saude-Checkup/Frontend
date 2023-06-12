@@ -9,6 +9,7 @@ import { UserState } from '../../../store/token/Reducer';
 import { addToken } from '../../../store/token/Action';
 import { toast } from 'react-toastify';
 
+
 function Navbar() {
     //const [token, setToken] = useLocalStorage('token');
     const dispatch = useDispatch();
@@ -60,7 +61,7 @@ function Navbar() {
                             </Link>
                             <Link to="/perfil" className="text-decorator-none" >
                                 <Typography variant="h6" >
-                                    Perfil
+                                    Desenvolvidores
                                 </Typography>          
                                 
                                 </Link>
