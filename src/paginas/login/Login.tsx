@@ -48,7 +48,7 @@ const FormStyled = withStyles({
 })(TextField);
 
 function Login() {
-   
+
     let navigate = useNavigate();
 
     const dispatch = useDispatch();
@@ -88,7 +88,7 @@ function Login() {
             console.log("ID: " + respUserLogin.id)
 
             dispatch(addToken(respUserLogin.token))
-            dispatch(addId(respUserLogin.id.toString()))    
+            dispatch(addId(respUserLogin.id.toString()))
             navigate('/home')
         }
     }, [respUserLogin.token])
@@ -125,15 +125,16 @@ function Login() {
     }
 
     return (
+
         <Grid className='bg-08-blue' container direction='row'>
             <Grid xs={5} >
-                <Box paddingX={8} className='loginForm' borderRadius={3} border={1} marginLeft={10} >
+                <Box className='loginForm' borderRadius={3} border={1}  >
                     <form onSubmit={onSubmit}>
                         <StyledTitle variant='h3' gutterBottom>Entrar</StyledTitle>
                         <FormStyled value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
                         <FormStyled value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
-                            <Button type='submit' variant='contained' className="logar">
+                            <Button type='submit' variant='contained' className="btnLogar">
                                 Logar
                             </Button>
                         </Box>
@@ -142,17 +143,18 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom >Não tem uma conta?</Typography>
                         </Box>
-                        <Link to='/cadastrousuario' className='textos1'>
+                        <Box marginRight={1}>
+                        <Link to='/cadastrousuario' className='text-decorator-none'>
                             <Typography variant='subtitle1' gutterBottom className='textos1'>Cadastre-se</Typography>
                         </Link>
-
+                        </Box>
                     </Box>
                 </Box>
             </Grid>
-            <Grid xs={6}>
-<Box  className='imagem' marginLeft={12}>
-    
-</Box>
+            <Grid xs={6}  >
+                <Box className='boxImagem'>
+                    <img className='imagem' src='https://i.im.ge/2023/06/10/iFkq1S.logoback.png' ></img>
+                </Box>
             </Grid>
         </Grid>
     );
