@@ -13,6 +13,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { LinkedIn } from "@mui/icons-material";
 
+
 function CarrosselDevs() {
     return (
         <>
@@ -33,34 +34,34 @@ function CarrosselDevs() {
                 className="swiperDev"
             >
 
-                <SwiperSlide className="slideDev">
-                    <Grid className='cardDev' item xs={12} sm={12} container>
-                        <Grid className='imgDev' item xs={12} sm={12} container>
-                            <img src="https://i.im.ge/2023/06/10/iFkkpJ.imagemCamille.jpg" alt="" />
-                        </Grid>
-                        <Grid className='textoSlideDev' item xs={12} sm={12} container>
-                            <p>Sou uma Desenvolvedora Java Júnior, formada como Técnico em Desenvolvimento de Sistemas.
-                            Desenvolvi projetos utilizando diversas linguagens e tecnologias, tais como Java, SQL, Git, CSS, HTML, PHP, JavaScript, C#, Json. Assim como bibliotecas e frameworks como Bootstrap, Framework7, Spring, React.js e React Native.</p>
-                        </Grid>
-                        <Grid className='textoSlideDev' item xs={12} sm={12} container>
-                            <Box className="subtitulosDevs">
-                                <h5>Camille Bueno</h5>
-                                <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                                <Grid className='imgRedes' item xs={6} sm={6} container>
-                                <a href="https://www.linkedin.com/in/camillepbueno/" target="_blank" rel="noopener noreferrer">
-                                <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
-                            </a>         
-                            <a href="https://github.com/CamillePB" target="_blank" rel="noopener noreferrer">
-                                <GitHubIcon style={{ fontSize: 30, color: "black" }} />
-                            </a>
-                                </Grid>
+                <SwiperSlide className="slideDev" key={1}>
+                        <Grid className='cardDev' item xs={12} sm={12} container>
+                            <Grid className='imgDev' item xs={12} sm={12} container>
+                                <img src="https://i.im.ge/2023/06/10/iFkkpJ.imagemCamille.jpg" alt="" />
+                            </Grid>
+                            <Grid className='textoSlideDev' item xs={12} sm={12} container>
+                                <p>Sou uma Desenvolvedora Java Júnior, formada como Técnico em Desenvolvimento de Sistemas.
+                                Desenvolvi projetos utilizando diversas linguagens e tecnologias, tais como Java, SQL, Git, CSS, HTML, PHP, JavaScript, C#, Json. Assim como bibliotecas e frameworks como Bootstrap, Framework7, Spring, React.js e React Native.</p>
+                            </Grid>
+                            <Grid className='textoSlideDev' item xs={12} sm={12} container>
+                                <Box className="subtitulosDevs">
+                                    <h5>Camille Bueno</h5>
+                                    <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
+                                    <Grid className='imgRedes' item xs={6} sm={6} container>
+                                    <a href="https://www.linkedin.com/in/camillepbueno/" target="_blank" rel="noopener noreferrer">
+                                    <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
+                                </a>         
+                                <a href="https://github.com/CamillePB" target="_blank" rel="noopener noreferrer">
+                                    <GitHubIcon style={{ fontSize: 30, color: "black" }} />
+                                </a>
+                                    </Grid>
+                                    </Box>
                                 </Box>
-                            </Box>
+                            </Grid>
                         </Grid>
-                    </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={2}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFkH2y.imagemGuilherme.jpg" alt="" />
@@ -86,7 +87,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={3}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFkvKz.imagemJeniffer.jpg" alt="" />
@@ -113,7 +114,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={4}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFk40F.imagemJoyce.jpg" alt="" />
@@ -140,7 +141,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={5}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFkBcK.imagemLeticia.jpg" alt="" />
@@ -167,7 +168,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={6}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFzQC8.imagemStephany.jpg" alt="" />
