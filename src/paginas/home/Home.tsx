@@ -37,7 +37,7 @@ function Home() {
     return (
         <><div className="marge">
             <Grid className='background' container direction='row'>
-                <div className='formatos'><img src="src\assets\images\formatos.png" alt="" /></div>
+                <div className='formatos'><img src="https://i.im.ge/2023/06/12/i7LhaP.formatos.png" alt="" /></div>
                 <Grid className='home' item xs={12} sm={12} container>
                     <Grid className='textoHome' item xs={12} sm={6} >
                         <Box>
@@ -70,7 +70,7 @@ function Home() {
                     </Grid>
                     <Grid item xs={12} sm={6} >
                         <Box className='imagemHome'>
-                            <img src="src\assets\images\logo.png" alt="" />
+                            <img src="https://i.im.ge/2023/06/12/i7s5Da.logo.png" alt="" />
                         </Box>
                     </Grid>
                 </Grid>
