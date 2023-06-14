@@ -22,7 +22,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* object-position: 80% 100%; */
 }
 
 .swiper {
@@ -92,4 +91,32 @@
   background-color: #96BB7C;
   color: #FFFFFF;
   transition: 0.4s ease-in-out;
+}
+
+@media (max-width: 800px) {
+
+  .swiper {
+    width: 300px;
+    height: 500px;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .textoSlide h4 {
+    width: 250px;
+    height: 24px;
+    font-size: 16px;
+  }
+  
+  .textoSlide p {
+    width: 350px;
+    font-size: 17px;
+    padding-bottom: 10px;
+    text-align: start;
+    text-justify: none;
+  }
+
 }

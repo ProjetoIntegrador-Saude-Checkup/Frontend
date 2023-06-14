@@ -33,9 +33,6 @@
     align-items: flex-start;
     padding: 0px;
     padding-right: 300px;
-    gap: 35px;
-    width: 507px;
-    height: 296px;
     margin-right: 60px;
 }
 
@@ -47,7 +44,7 @@
     line-height: 20px;
     letter-spacing: 0.2px;
     color: #737373;
-
+    display: flex;
 }
 
 .serviços h2 {
@@ -82,4 +79,37 @@
 
 .cards img {
    width: 30%;
+}
+
+@media (max-width: 800px) {
+    .containerProjeto{
+        padding: 15px;
+        height: auto;
+        justify-content: center;
+    }
+
+    .serviços{
+        width: 100%;
+        padding-right: 0;
+        margin-right: 0;
+    }
+
+    .serviços p{
+        text-align: justify;
+        font-size: 18px;
+        width: auto;
+    }
+
+    .serviços h2 {
+        width: auto;
+    }
+
+    .cards{
+        padding: 30px 15px;
+        height: 250px;
+    }
+
+    #card2{
+        margin: 15px;
+    }
 }

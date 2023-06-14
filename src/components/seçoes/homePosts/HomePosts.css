@@ -41,6 +41,33 @@
     color: #737373;
 }
 
-.carrosselPosts{
+.carrosselPosts {
     padding-top: 120px;
+}
+
+@media (max-width: 800px) {
+
+    .containerHomePosts {
+        height: 1050px;
+    }
+
+    .carrosselPosts {
+        padding-top: 300px;
+    }
+
+    .textoHomePosts{
+        padding: 0;
+        text-align: start;
+    }
+
+    .textoHomePosts h6 {
+        font-size: 20px;
+    }
+
+    .textoHomePosts p {
+        font-size: 18px;
+        letter-spacing: 0.2px;
+        padding-left: 15px;
+    }
+
 }

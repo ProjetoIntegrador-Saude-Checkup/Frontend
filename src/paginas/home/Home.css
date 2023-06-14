@@ -1,13 +1,9 @@
-@import url(../../App.css);
-
 .background {
     width: 1440px;
-    height: 841px;
-    background: #FFFFFF;
+    height: 620px;
     flex: none;
-    order: 0;
+    order: -9999;
     align-self: stretch;
-    flex-grow: 0;
 }
 
 .retanguloMenor {
@@ -17,6 +13,7 @@
     left: 0px;
     top: 0px;
     background: #EFF8ED;
+    z-index: -9999;
 }
 
 .retanguloMaior {
@@ -26,7 +23,7 @@
     right: 0px;
     top: 0px;
     background: #EFF8ED;
-    z-index: 0;
+   z-index: -1;
 }
 
 .formatos {
@@ -45,10 +42,9 @@
 }
 
 .textoHome {
-    padding-bottom: 40rem;
+    padding-bottom: 15rem;
     font-family: 'Montserrat';
     font-style: normal;
-    z-index: 1;
 }
 
 .textoHome h5 {
@@ -87,10 +83,7 @@
 
 .botaoCadastro {
     color: #96BB7C;
-    
     background: transparent;
-
-   
 }
 
 .botaoCadastro:hover {
@@ -111,4 +104,39 @@
     background-color: #c5ddb6;
     color: #fefefe;
     border: 1px solid #bbed9a;
+}
+
+@media (max-width: 800px) {
+
+    .background{
+        background-color: #EFF8ED;
+        height: 500px;
+    }
+
+    .textoHome{
+        display: flex;
+        flex-direction: column;
+       
+    }
+
+    .textoHome h1{
+        width: 300px;
+        font-size: 32px;
+    }
+    
+    .home{
+        padding: 1rem;
+    }
+
+    .retanguloMenor{
+        display: none;
+    }
+
+    .imagemHome img{
+        display: none;
+    }
+
+    .formatos{
+        display: none;
+    }
 }

@@ -6,12 +6,39 @@ import "./Carrossel.css";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function Carrossel() {
+
+    const [slidesPerView, setSlidesPerView] = useState(2);
+
+    useEffect(() => {
+        function updateSlidesPerView() {
+            if (window.innerWidth < 800) {
+                setSlidesPerView(1);
+            } else {
+                setSlidesPerView(2);
+            }
+        }
+
+        window.addEventListener('resize', updateSlidesPerView);
+        updateSlidesPerView();
+
+        return () => {
+            window.removeEventListener('resize', updateSlidesPerView);
+        };
+    }, []);
+
+    let limitePalavras = 100;
+
+    if (window.innerWidth < 800) {
+        limitePalavras = 35;
+    }
+
     return (
         <>
             <Swiper
-                slidesPerView={2}
+                slidesPerView={slidesPerView}
                 centeredSlides={true}
                 spaceBetween={30}
                 loop={true}
@@ -35,8 +62,8 @@ function Carrossel() {
                         <Grid className='textoSlide' item xs={12} sm={6} container>
                             <h5 >Vacinação</h5>
                             <h4>Vacina contra a gripe</h4>
-  
-                            <p>A vacina é oferecida todos os anos, antes do inverno, período em que as doenças respiratórias são mais comuns. Os imunizantes têm perfil de segurança excelente e, geralmente, são bem tolerados.</p>
+                            <p>{`A vacina é oferecida todos os anos, antes do inverno, período em que as doenças respiratórias são mais comuns. Os imunizantes têm perfil de segurança excelente e, geralmente, são bem tolerados.`.split(" ").slice(0, limitePalavras).join(" ")}
+                                {`A vacina é oferecida todos os anos, antes do inverno, período em que as doenças respiratórias são mais comuns. Os imunizantes têm perfil de segurança excelente e, geralmente, são bem tolerados.`.split(" ").length > limitePalavras ? "..." : ""}</p>
                             <Link to='/cadastro'>
                                 <button className="botaoHomePosts"><span>Ler mais </span></button>
                             </Link>
@@ -47,12 +74,13 @@ function Carrossel() {
                 <SwiperSlide className="slide">
                     <Grid className='cardPost' item xs={12} sm={12} container>
                         <Grid item xs={12} sm={6} container>
-                            <img src="https://static1.minhavida.com.br/articles/4a/e3/31/8d/chekup-article-1.jpg" alt="" />
+                            <img src="https://laboreweb.com.br/wp-content/uploads/2017/12/CHECK-UP-MARINGA-BLOG-1.jpg" alt="" />
                         </Grid>
                         <Grid className='textoSlide' item xs={12} sm={6} container>
                             <h5 >Exame</h5>
                             <h4>Porque fazer check-up</h4>
-                            <p>A realização do check-up é muito importante, pois permite que, através de uma série de exames simples, o estado de saúde do paciente seja avaliado de forma completa. O check-up atua de forma preventiva, auxiliando na detecção de possíveis alterações no organismo ou doenças.</p>
+                            <p>{`A realização do check-up é muito importante, pois permite que, através de uma série de exames simples, o estado de saúde do paciente seja avaliado de forma completa. O check-up atua de forma preventiva, auxiliando na detecção de possíveis alterações no organismo ou doenças.`.split(" ").slice(0, limitePalavras).join(" ")}
+                                {`A realização do check-up é muito importante, pois permite que, através de uma série de exames simples, o estado de saúde do paciente seja avaliado de forma completa. O check-up atua de forma preventiva, auxiliando na detecção de possíveis alterações no organismo ou doenças.`.split(" ").length > limitePalavras ? "..." : ""}</p>
                             <Link to='/cadastro'>
                                 <button className="botaoHomePosts"><span>Ler mais </span></button>
                             </Link>
@@ -68,7 +96,8 @@ function Carrossel() {
                         <Grid className='textoSlide' item xs={12} sm={6} container>
                             <h5 >Saúde</h5>
                             <h4>Acompanhamento médico</h4>
-                            <p>Um dos melhores benefícios de ser acompanhado por um médico é sentir que o atendimento é personalizado, ou seja, seu histórico é levado em conta e pode funcionar como um mapa para prevenir futuros problemas de saúde</p>
+                            <p>{`Um dos melhores benefícios de ser acompanhado por um médico é sentir que o atendimento é personalizado, ou seja, seu histórico é levado em conta e pode funcionar como um mapa para prevenir futuros problemas de saúde.`.split(" ").slice(0, limitePalavras).join(" ")}
+                                {`Um dos melhores benefícios de ser acompanhado por um médico é sentir que o atendimento é personalizado, ou seja, seu histórico é levado em conta e pode funcionar como um mapa para prevenir futuros problemas de saúde.`.split(" ").length > limitePalavras ? "..." : ""}</p>
                             <Link to='/cadastro'>
                                 <button className="botaoHomePosts"><span>Ler mais </span></button>
                             </Link>
@@ -84,7 +113,8 @@ function Carrossel() {
                         <Grid className='textoSlide' item xs={12} sm={6} container>
                             <h5 >Exame</h5>
                             <h4>Exames de imagem</h4>
-                            <p>Os exames de imagem são aplicados para o acompanhamento de doenças crônicas, descobrimento de doenças, visualização de órgãos, confirmação de cura de doenças, verificação do resultado de cirurgias, entre outros.</p>
+                            <p>{`Os exames de imagem são aplicados para o acompanhamento de doenças crônicas, descobrimento de doenças, visualização de órgãos, confirmação de cura de doenças, verificação do resultado de cirurgias, entre outros.`.split(" ").slice(0, limitePalavras).join(" ")}
+                                {`Os exames de imagem são aplicados para o acompanhamento de doenças crônicas, descobrimento de doenças, visualização de órgãos, confirmação de cura de doenças, verificação do resultado de cirurgias, entre outros.`.split(" ").length > limitePalavras ? "..." : ""}</p>
                             <Link to='/cadastro'>
                                 <button className="botaoHomePosts"><span>Ler mais </span></button>
                             </Link>

@@ -12,12 +12,33 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { LinkedIn } from "@mui/icons-material";
+import { useEffect, useState } from "react";
 
 function CarrosselDevs() {
+
+    const [slidesPerView, setSlidesPerView] = useState(2);
+
+    useEffect(() => {
+        function updateSlidesPerView() {
+            if (window.innerWidth < 800) {
+                setSlidesPerView(1);
+            } else {
+                setSlidesPerView(2);
+            }
+        }
+
+        window.addEventListener('resize', updateSlidesPerView);
+        updateSlidesPerView();
+
+        return () => {
+            window.removeEventListener('resize', updateSlidesPerView);
+        };
+    }, []);
+
     return (
         <>
             <Swiper
-                slidesPerView={2}
+                slidesPerView={slidesPerView}
                 centeredSlides={true}
                 spaceBetween={30}
                 loop={true}
@@ -40,20 +61,20 @@ function CarrosselDevs() {
                         </Grid>
                         <Grid className='textoSlideDev' item xs={12} sm={12} container>
                             <p>Sou uma Desenvolvedora Java Júnior, formada como Técnico em Desenvolvimento de Sistemas.
-                            Desenvolvi projetos utilizando diversas linguagens e tecnologias, tais como Java, SQL, Git, CSS, HTML, PHP, JavaScript, C#, Json. Assim como bibliotecas e frameworks como Bootstrap, Framework7, Spring, React.js e React Native.</p>
+                                Desenvolvi projetos utilizando diversas linguagens e tecnologias, tais como Java, SQL, Git, CSS, HTML, PHP, JavaScript, C#, Json. Assim como bibliotecas e frameworks como Bootstrap, Framework7, Spring, React.js e React Native.</p>
                         </Grid>
                         <Grid className='textoSlideDev' item xs={12} sm={12} container>
                             <Box className="subtitulosDevs">
                                 <h5>Camille Bueno</h5>
                                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                                <Grid className='imgRedes' item xs={6} sm={6} container>
-                                <a href="https://www.linkedin.com/in/camillepbueno/" target="_blank" rel="noopener noreferrer">
-                                <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
-                            </a>         
-                            <a href="https://github.com/CamillePB" target="_blank" rel="noopener noreferrer">
-                                <GitHubIcon style={{ fontSize: 30, color: "black" }} />
-                            </a>
-                                </Grid>
+                                    <Grid className='imgRedes' item xs={6} sm={6} container>
+                                        <a href="https://www.linkedin.com/in/camillepbueno/" target="_blank" rel="noopener noreferrer">
+                                            <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
+                                        </a>
+                                        <a href="https://github.com/CamillePB" target="_blank" rel="noopener noreferrer">
+                                            <GitHubIcon style={{ fontSize: 30, color: "black" }} />
+                                        </a>
+                                    </Grid>
                                 </Box>
                             </Box>
                         </Grid>
@@ -72,14 +93,14 @@ function CarrosselDevs() {
                             <Box className="subtitulosDevs">
                                 <h5>Guilherme Henrique</h5>
                                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                                <Grid className='imgRedes' item xs={6} sm={6} container>
-                                <a href="https://www.linkedin.com/in/guilhermehenrique-lima/" target="_blank" rel="noopener noreferrer">
-                                <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
-                            </a>         
-                            <a href="https://github.com/guilhermehenriquelima" target="_blank" rel="noopener noreferrer">
-                                <GitHubIcon style={{ fontSize: 30, color: "black" }} />
-                            </a>
-                                </Grid>
+                                    <Grid className='imgRedes' item xs={6} sm={6} container>
+                                        <a href="https://www.linkedin.com/in/guilhermehenrique-lima/" target="_blank" rel="noopener noreferrer">
+                                            <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
+                                        </a>
+                                        <a href="https://github.com/guilhermehenriquelima" target="_blank" rel="noopener noreferrer">
+                                            <GitHubIcon style={{ fontSize: 30, color: "black" }} />
+                                        </a>
+                                    </Grid>
                                 </Box>
                             </Box>
                         </Grid>
@@ -93,20 +114,20 @@ function CarrosselDevs() {
                         </Grid>
                         <Grid className='textoSlideDev' item xs={12} sm={12} container>
                             <p>Iniciei minha jornada profissional aos 16 anos, meu último trabalho foi no Hospital CEMA onde aprendi a ter um olhar clínico, flexibilidade e resolução de problemas, hoje estou transição de carreira para a área de tecnologia.
-                            Sou formada como técnica de administração de empresas, tecnóloga em design gráfico e agora sou uma desenvolvedora Full Stack.</p>
+                                Sou formada como técnica de administração de empresas, tecnóloga em design gráfico e agora sou uma desenvolvedora Full Stack.</p>
                         </Grid>
                         <Grid className='textoSlideDev' item xs={12} sm={12} container>
                             <Box className="subtitulosDevs">
                                 <h5>Jeniffer Souza</h5>
                                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                                <Grid className='imgRedes' item xs={6} sm={6} container>
-                                <a href="https://www.linkedin.com/in/jeniffer-souza-ribeiro-8323971ab/" target="_blank" rel="noopener noreferrer">
-                                <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
-                            </a>         
-                            <a href="https://github.com/JenifferSR" target="_blank" rel="noopener noreferrer">
-                                <GitHubIcon style={{ fontSize: 30, color: "black" }} />
-                            </a>
-                                </Grid>
+                                    <Grid className='imgRedes' item xs={6} sm={6} container>
+                                        <a href="https://www.linkedin.com/in/jeniffer-souza-ribeiro-8323971ab/" target="_blank" rel="noopener noreferrer">
+                                            <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
+                                        </a>
+                                        <a href="https://github.com/JenifferSR" target="_blank" rel="noopener noreferrer">
+                                            <GitHubIcon style={{ fontSize: 30, color: "black" }} />
+                                        </a>
+                                    </Grid>
                                 </Box>
                             </Box>
                         </Grid>
@@ -126,14 +147,14 @@ function CarrosselDevs() {
                             <Box className="subtitulosDevs">
                                 <h5>Joyce Caroline</h5>
                                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                                <Grid className='imgRedes' item xs={6} sm={6} container>
-                                <a href="https://www.linkedin.com/in/joyce-caroline-rodrigues/" target="_blank" rel="noopener noreferrer">
-                                <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
-                            </a>         
-                            <a href="https://github.com/Carol20Joyce" target="_blank" rel="noopener noreferrer">
-                                <GitHubIcon style={{ fontSize: 30, color: "black" }} />
-                            </a>
-                                </Grid>
+                                    <Grid className='imgRedes' item xs={6} sm={6} container>
+                                        <a href="https://www.linkedin.com/in/joyce-caroline-rodrigues/" target="_blank" rel="noopener noreferrer">
+                                            <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
+                                        </a>
+                                        <a href="https://github.com/Carol20Joyce" target="_blank" rel="noopener noreferrer">
+                                            <GitHubIcon style={{ fontSize: 30, color: "black" }} />
+                                        </a>
+                                    </Grid>
                                 </Box>
                             </Box>
                         </Grid>
@@ -146,21 +167,21 @@ function CarrosselDevs() {
                             <img src="https://i.im.ge/2023/06/10/iFkBcK.imagemLeticia.jpg" alt="" />
                         </Grid>
                         <Grid className='textoSlideDev' item xs={12} sm={12} container>
-                            <p>Há um ano estudando o mundo da programação. Atualmente curso Ciência da Computação na UNICID e conclui cursos de programação, além do Bootcamp da Generation. Com  os meus conhecimentos sou capaz de construir apis, desenvolver sites completos e gerenciar bancos de dados.  
+                            <p>Há um ano estudando o mundo da programação. Atualmente curso Ciência da Computação na UNICID e conclui cursos de programação, além do Bootcamp da Generation. Com  os meus conhecimentos sou capaz de construir apis, desenvolver sites completos e gerenciar bancos de dados.
                                 Profissional orientada a resultados com grande determinação para solucionar problemas.</p>
                         </Grid>
                         <Grid className='textoSlideDev' item xs={12} sm={12} container>
                             <Box className="subtitulosDevs">
                                 <h5>Letícia Queiroga</h5>
                                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                                <Grid className='imgRedes' item xs={6} sm={6} container>
-                                <a href="https://www.linkedin.com/in/leticiaqrg/" target="_blank" rel="noopener noreferrer">
-                                <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
-                            </a>         
-                            <a href="https://github.com/Letixs" target="_blank" rel="noopener noreferrer">
-                                <GitHubIcon style={{ fontSize: 30, color: "black" }} />
-                            </a>
-                                </Grid>
+                                    <Grid className='imgRedes' item xs={6} sm={6} container>
+                                        <a href="https://www.linkedin.com/in/leticiaqrg/" target="_blank" rel="noopener noreferrer">
+                                            <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
+                                        </a>
+                                        <a href="https://github.com/Letixs" target="_blank" rel="noopener noreferrer">
+                                            <GitHubIcon style={{ fontSize: 30, color: "black" }} />
+                                        </a>
+                                    </Grid>
                                 </Box>
                             </Box>
                         </Grid>
@@ -180,14 +201,14 @@ function CarrosselDevs() {
                             <Box className="subtitulosDevs" >
                                 <h5>Stephany Camily</h5>
                                 <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                                <Grid className='imgRedes' item xs={6} sm={6} container>
-                                <a href="https://www.linkedin.com/in/stephanycamily/" target="_blank" rel="noopener noreferrer">
-                                <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
-                            </a>         
-                            <a href="https://github.com/stefygrr" target="_blank" rel="noopener noreferrer">
-                                <GitHubIcon style={{ fontSize: 30, color: "black" }} />
-                            </a>
-                                </Grid>
+                                    <Grid className='imgRedes' item xs={6} sm={6} container>
+                                        <a href="https://www.linkedin.com/in/stephanycamily/" target="_blank" rel="noopener noreferrer">
+                                            <LinkedInIcon style={{ fontSize: 40, color: "#0077B5" }} />
+                                        </a>
+                                        <a href="https://github.com/stefygrr" target="_blank" rel="noopener noreferrer">
+                                            <GitHubIcon style={{ fontSize: 30, color: "black" }} />
+                                        </a>
+                                    </Grid>
                                 </Box>
                             </Box>
                         </Grid>

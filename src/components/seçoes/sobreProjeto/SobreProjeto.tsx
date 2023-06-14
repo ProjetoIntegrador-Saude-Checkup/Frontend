@@ -16,7 +16,7 @@ Parte da população não tem esse acesso às informações causando impacto na 
 </p>
                     </Box>
                 </Grid>
-                    <Grid className='cards' item xs={12} sm={2} >
+                    <Grid className='cards' item xs={5} sm={2} >
                         <Box>
                             <img className='imgCards' src="https://i.im.ge/2023/06/10/iFz2ep.imgCard.png" alt="" />
                             <h5>Divulgações</h5>
@@ -24,7 +24,7 @@ Parte da população não tem esse acesso às informações causando impacto na 
                             <p>Campanhas de saúde e vacinação em um só lugar.</p>
                         </Box>
                     </Grid>
-                    <Grid className='cards' id="card2" item xs={12} sm={2} >
+                    <Grid className='cards' id="card2" item xs={5} sm={2} >
                         <Box>
                             <img className='imgCards' src="https://i.im.ge/2023/06/10/iFzO0C.imgCard2.png" alt="" />
                             <h5>Dicas</h5>

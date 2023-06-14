@@ -35,8 +35,6 @@
     margin-right: auto;
 }
 
-.swiper-button-prev {}
-
 .imgDev {
     padding-top: 30px;
     justify-content: center;
@@ -81,7 +79,6 @@
     text-align: justify;
     letter-spacing: 0.2px;
     color: #252B42;
-    ;
     margin: 0;
 }
 
@@ -122,4 +119,29 @@
     display: inline-block;
     margin-right: 300px;
     /* Espaçamento entre as imagens */
+}
+
+@media (max-width: 800px) {
+    
+    .swiperDev.swiper {
+        width: 380px;
+        height: 420px;
+    }
+
+    .textoSlideDev p{
+        width: 330px;
+        font-size: 15px;
+    }
+
+    .textoSlideDev h5{
+        padding-top: 50px;
+    }
+
+    .textoSlideDev{
+        padding-top: 15px;
+    }
+
+    .slideDev.swiper-slide img {
+        width: 25%;
+    }
 }

@@ -46,3 +46,30 @@
     order: 2;
     flex-grow: 0;
 }
+
+@media (max-width: 800px) {
+
+    .containerDevs{
+        justify-content: flex-start;
+        margin-top: 30px;
+        height: 900px;
+    }
+
+    .textoDevs{
+        align-items: flex-start;
+        padding-left: 10px;
+    }
+
+    .textoDevs h2{
+       font-size: 20px;
+    }
+
+    .textoDevs p{
+        width: 350px;
+        font-size: 16px;
+        padding-top: 15px;
+        padding-left: 20px;
+        letter-spacing: 0px;
+    }
+
+}
