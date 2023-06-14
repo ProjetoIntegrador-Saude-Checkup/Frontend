@@ -5,7 +5,7 @@ import Carrossel from '../../carrossel/Carrossel';
 import './Devs.css'
 import CarrosselDevs from '../../carrosseldevs/CarrosselDevs';
 
-function Devs() {
+function Devs({ key }) {
     return (
         <>
             <Grid className='containerDevs' container>
@@ -17,7 +17,7 @@ function Devs() {
                 </Grid>
                 <Grid className='carrosselDevs' item xs={12} sm={12} >
                     <Box>
-                        <CarrosselDevs />
+                        <CarrosselDevs key={key} />
                     </Box>
                 </Grid>
             </Grid >

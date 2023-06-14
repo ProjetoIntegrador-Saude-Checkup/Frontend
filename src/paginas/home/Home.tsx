@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 
+
 function Home() {
     let navigate = useNavigate();
 
@@ -32,6 +33,9 @@ function Home() {
         }
     }, [token])
 
+  
+    const isLoggedIn = !!token ;
+    
     return (
         <><div className="marge">
             <Grid className='background' container direction='row'>
@@ -46,12 +50,27 @@ function Home() {
 
                         </Box>
                         <Box className='div-botoes'>
-                            <Link to='/cadastrousuario'>
-                                <button className="botaoCadastro"><span>Cadastre-se</span></button>
-                            </Link>
-                            <Link to='/login'>
-                                <button className="botaoSobre"><span>Login</span></button>
-                            </Link>
+                            {isLoggedIn && (
+                                    <Link to="/perfil">
+                                        <button className="botaoPerfil">
+                                            <span>Meu Perfil</span>
+                                        </button>
+                                    </Link>
+                                )}
+                                {!isLoggedIn && (
+                                    <>
+                                        <Link to="/cadastrousuario">
+                                            <button className="botaoCadastro">
+                                                <span>Cadastre-se</span>
+                                            </button>
+                                        </Link>
+                                        <Link to="/login">
+                                            <button className="botaoSobre">
+                                                <span>Login</span>
+                                            </button>
+                                        </Link>
+                                    </>
+                                )}
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={6} >
@@ -63,7 +82,8 @@ function Home() {
             </Grid>
             <SobreProjeto />
             <HomePosts />
-            <Devs /></div>
+            <Devs key="desenvolvedores"/>
+            </div>
         </>
     );
 }

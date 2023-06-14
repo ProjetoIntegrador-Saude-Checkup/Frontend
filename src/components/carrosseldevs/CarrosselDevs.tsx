@@ -6,13 +6,12 @@ import "./CarrosselDevs.css";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Grid, Box } from "@material-ui/core";
 import { Link } from "react-router-dom";
-
-
 import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import { LinkedIn } from "@mui/icons-material";
 import { useEffect, useState } from "react";
+
 
 function CarrosselDevs() {
 
@@ -81,7 +80,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={2}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFkH2y.imagemGuilherme.jpg" alt="" />
@@ -107,7 +106,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={3}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFkvKz.imagemJeniffer.jpg" alt="" />
@@ -134,7 +133,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={4}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFk40F.imagemJoyce.jpg" alt="" />
@@ -161,7 +160,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={5}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFkBcK.imagemLeticia.jpg" alt="" />
@@ -188,7 +187,7 @@ function CarrosselDevs() {
                     </Grid>
                 </SwiperSlide>
 
-                <SwiperSlide className="slideDev">
+                <SwiperSlide className="slideDev" key={6}>
                     <Grid className='cardDev' item xs={12} sm={12} container>
                         <Grid className='imgDev' item xs={12} sm={12} container>
                             <img src="https://i.im.ge/2023/06/10/iFzQC8.imagemStephany.jpg" alt="" />

@@ -140,3 +140,8 @@
         display: none;
     }
 }
+.botaoPerfil {
+    color: #fff;
+   background: #96BB7C;
+   margin-left: 15px;
+}
