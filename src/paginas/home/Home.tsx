@@ -56,7 +56,7 @@ function Home() {
                     </Grid>
                     <Grid item xs={12} sm={6} >
                         <Box className='imagemHome'>
-                            <img src="https://i.im.ge/2023/06/12/i7s5Da.logo.png" alt="" />
+                            <img src="src\assets\images\logo.png" alt="" />
                         </Box>
                     </Grid>
                 </Grid>

@@ -142,12 +142,16 @@ function CadastroUsuario() {
 
     return (
         <Grid container className='bg-08-blue' direction='row'>
-            <Grid item xs={6} className='imagem2'></Grid>
-            <Grid item xs={6}>
-                <Box paddingX={8} borderRadius={3} border={1} className='cadastroForm' marginRight={5} marginLeft={8}>
+            <Grid item className='custom-grid-item'>
+            <Box className='boxImagem'>
+                    <img className='imagem' src='https://i.im.ge/2023/06/10/iFk5pM.logobackcadastro.png' ></img>
+                </Box>
+            </Grid>
+            <Grid item className='custom-grid-item'>
+                <Box paddingX={5} borderRadius={3} border={1} className='cadastroForm'>
                     <form onSubmit={onSubmit}>
-                    <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
-                        <TextField
+                    <StyledTitle variant='h3' gutterBottom color='textPrimary' align='center'>Cadastrar</StyledTitle>
+                        <FormStyled
                             error={checaNome}
                             value={user.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -158,7 +162,7 @@ function CadastroUsuario() {
                             margin='normal'
                             fullWidth
                             helperText={checaNome ? 'Digite um nome válido!' : ''} />
-                        <TextField
+                        <FormStyled
                             error={checaUsuario}
                             value={user.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -169,7 +173,7 @@ function CadastroUsuario() {
                             margin='normal'
                             fullWidth
                             helperText={checaUsuario ? 'Digite um e-mail válido!' : ''} />
-                        <TextField
+                        <FormStyled
                             value={user.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='foto'
@@ -179,7 +183,7 @@ function CadastroUsuario() {
                             margin='normal'
                             type='normal'
                             fullWidth />
-                        <TextField
+                        <FormStyled
                             error={checaSenha}
                             value={user.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -191,12 +195,12 @@ function CadastroUsuario() {
                             type='password'
                             fullWidth
                             helperText={checaSenha ? "A senha precisa ter no mínimo 8 caracteres" : ""} />
-                        <TextField
+                        <FormStyled
                             error={checaConfirmarSenha}
                             value={confirmarSenha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)}
                             id='confirmarSenha'
-                            label='confirmarSenha'
+                            label='confirmar senha'
                             variant='outlined'
                             name='confirmarSenha'
                             margin='normal'
@@ -205,11 +209,11 @@ function CadastroUsuario() {
                             helperText={checaConfirmarSenha ? 'As senhas não conferem!' : ''} />
                         <Box marginTop={2} textAlign='center'>
                             <Link to='/login' className='text-decorator-none'>
-                                <Button variant='contained' color='secondary' className='btnCancelar'>
+                                <Button variant='contained' className='btnCancelar'>
                                     Cancelar
                                 </Button>
                             </Link>
-                            <Button type='submit' variant='contained' className='btncadastrar'
+                            <Button type='submit' variant='contained' className='btnCadastrar'
                                 disabled={  checaNome || checaUsuario || checaSenha || 
                                             checaConfirmarSenha || checaVazio ? true : false}>
                                 Cadastrar

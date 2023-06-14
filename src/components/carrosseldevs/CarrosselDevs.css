@@ -126,6 +126,7 @@
     .swiperDev.swiper {
         width: 380px;
         height: 420px;
+        padding: 0;
     }
 
     .textoSlideDev p{

@@ -48,11 +48,13 @@
 @media (max-width: 800px) {
 
     .containerHomePosts {
-        height: 1050px;
+        height: 1160px;
+        padding: 30;
+        padding-bottom: 0;
     }
 
     .carrosselPosts {
-        padding-top: 300px;
+        padding-top: 350px;
     }
 
     .textoHomePosts{
