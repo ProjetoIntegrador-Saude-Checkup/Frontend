@@ -54,6 +54,9 @@ function Navbar() {
                         <Link to="/postagens" className="text-decorator-none">
                             <Typography variant="h6">Postagens</Typography>
                         </Link>
+                        <Link to="/temas" className="text-decorator-none">
+                            <Typography variant="h6">Temas</Typography>
+                        </Link>
                         <Link to="/perfil" className="text-decorator-none">
                             <Typography variant="h6">Perfil</Typography>
                         </Link>
