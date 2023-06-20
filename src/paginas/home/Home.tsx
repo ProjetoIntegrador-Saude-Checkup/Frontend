@@ -46,7 +46,7 @@ function Home() {
                     <Grid className='textoHome' item xs={12} sm={6} >
                         <Box>
                             <h5>Bem-vindo(a)</h5>
-                            <h1>Conheça a Saúde-Checkup</h1>
+                            <h1>Conheça a Saúde Check-Up</h1>
 
                         </Box>
                         <Box className='div-botoes'>
