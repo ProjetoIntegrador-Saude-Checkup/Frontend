@@ -10,7 +10,7 @@ function HomePosts() {
             <Grid className='containerHomePosts' container>
                 <Grid className='textoHomePosts' item xs={12} sm={6} >
                     <Box>
-                        <h6>Saúde Checku-Up</h6>
+                        <h6>Saúde Check-Up</h6>
                         <h2>Confira nossas postagens</h2>
                         <p>Deseja saber dicas de saúde para cuidar bem de você e de sua família, a fim de conquistar maior bem-estar e qualidade de vida? Aqui, você tem acesso a dicas de saúde relacionadas a alimentação, atividade física, saúde e bem-estar e também diversas curiosidades.
 
